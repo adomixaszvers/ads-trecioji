@@ -9,59 +9,62 @@ type vektor=^Element;
                 Kitas:^Element;
                 Duomenys:duomenu_tipas;
              end;
-
-     procedure VKurk;                                       //Sukuria tuðèia vektoriu                       VKurk;
-     function VPtk:boolean;                                 //Patikrina ar vektorius tuscias                VPtk;
-     procedure VPrid(Duom:duomenu_tipas);                   //Prideda elementà á vektoriaus galà            VPrid(Elementas);
-     procedure VRasyk;                                      //Isveda visus vektoriaus elementus á ekranà    VRasyk;
-     function VElem(Nr:integer):duomenu_tipas;              //Gauna n-tojo elemento duomenis.               VElem(n);
-     procedure VNaik;                                       //Atlaisvina atmintá                            VNaik;
-     procedure VNaikElem(Nr:integer);                       //Istrina n-tàjá elementà                       VNaikElem(n);
-     function VRask(Duom:duomenu_tipas):integer;            //Randa elemento su dëmeniu S numerá            VRask(S);
-     procedure VIterpk(Nr:integer; duom:duomenu_tipas);     //Iterpia elementà prieð n-tajá elementà        VIterpk(n,Elementas);
-     procedure VKeisk(Nr:integer; duom:duomenu_tipas);      //Pakeièia n-tajá elementà, kitu elementu       VKeisk(n,Elementas);
-     function VArSukurtas:boolean;                          //Patikrina ar sukurtas vektorius               VArSukurtas;  True - sukurtas False - nesukurtas
-     
-var elem,pradzia:vektor;
-          VDydis:longint;                                   //Kintamasis kuriame saugomas vektoriaus elementû skaicius  VDydis;
-
+             
+     type vect=record
+                elem:vektor;
+                pradzia:vektor;
+                VDydis:longint;
+               end;
+                                                                                                                        //v- vect tipo kintamsis
+     procedure VKurk(var v:vect);                                       //Sukuria tuðèia vektoriu                       VKurk(v);
+     function VPtk(v:vect):boolean;                                 //Patikrina ar vektorius tuscias                VPtk(v);
+     procedure VPrid(var v:vect;Duom:duomenu_tipas);                   //Prideda elementà á vektoriaus galà            VPrid(v,Elementas);
+     procedure VRasyk(v:vect);                                      //Isveda visus vektoriaus elementus á ekranà    VRasyk(v);
+     function VElem(v:vect; Nr:integer):duomenu_tipas;              //Gauna n-tojo elemento duomenis.               VElem(v,n);
+     procedure VNaik(var v:vect);                                       //Atlaisvina atmintá                            VNaik(v);
+     procedure VNaikElem(var v:vect; Nr:integer);                       //Istrina n-tàjá elementà                       VNaikElem(v,n);
+     function VRask(v:vect; Duom:duomenu_tipas):integer;            //Randa elemento su dëmeniu S numerá            VRask(v,S);
+     procedure VIterpk(var v:vect; Nr:integer; duom:duomenu_tipas);     //Iterpia elementà prieð n-tajá elementà        VIterpk(v,n,Elementas);
+     procedure VKeisk(var v:vect; Nr:integer; duom:duomenu_tipas);      //Pakeièia n-tajá elementà, kitu elementu       VKeisk(v,n,Elementas);
+     function VArSukurtas(v:vect):boolean;                         //Patikrina ar sukurtas vektorius               VArSukurtas(v);  True - sukurtas False - nesukurtas
+                                                                                                                    //v.VDydis-vectoriaus dydis.
 implementation
 
-procedure VKurk;
+procedure VKurk(var v:vect);
 begin
-  new(elem);
-  pradzia:=elem;
-  pradzia^.kitas:=nil;
-  VDydis:=0;
+  new(v.elem);
+  v.pradzia:=v.elem;
+  v.pradzia^.kitas:=nil;
+  v.VDydis:=0;
 end;
 
-function VPtk:boolean;
+function VPtk(v:vect):boolean;
 begin
-  VPtk:=(VDydis=0);
+  VPtk:=(v.VDydis=0);
 end;
 
-procedure VPrid(Duom:duomenu_tipas);
+procedure VPrid(var v:vect; Duom:duomenu_tipas);
 begin
-  If VDydis=0
+  If v.VDydis=0
    then begin
-         Elem^.Duomenys:=Duom;
-         Elem^.kitas:=nil;
-         inc(VDydis);
+         v.Elem^.Duomenys:=Duom;
+         v.Elem^.kitas:=nil;
+         inc(v.VDydis);
         end
    else begin
-         new(elem^.kitas);
-         elem:=elem^.kitas;
-         Elem^.Duomenys:=Duom;
-         Elem^.kitas:=nil;
-         inc(VDydis);
+         new(v.elem^.kitas);
+         v.elem:=v.elem^.kitas;
+         v.Elem^.Duomenys:=Duom;
+         v.Elem^.kitas:=nil;
+         inc(v.VDydis);
         end;
 end;
 
-procedure VRasyk;
+procedure VRasyk(v:vect);
   var E:vektor;
 begin
 
-  E:=pradzia;
+  E:=v.pradzia;
   while E<>nil do
    begin
     write(E^.duomenys,' ');
@@ -69,55 +72,55 @@ begin
    end;
 end;
 
-function VElem(Nr:integer):duomenu_tipas;
+function VElem(v:vect; Nr:integer):duomenu_tipas;
   var i:integer; E:vektor;
 begin
   if Nr<1 then halt;
-  E:=pradzia;
+  E:=v.pradzia;
   for i:=1 to Nr-1 do E:=E^.kitas;
   VElem:=E^.duomenys;
 end;
 
-procedure VNaik;
+procedure VNaik(var v:vect);
   var tarpinis:vektor;
 begin
-  while pradzia^.kitas<>nil do
+  while v.pradzia^.kitas<>nil do
    begin
-    tarpinis:=pradzia;
-    pradzia:=pradzia^.kitas;
+    tarpinis:=v.pradzia;
+    v.pradzia:=v.pradzia^.kitas;
     dispose(tarpinis);
    end;
-  dispose(pradzia);
-  VDydis:=0;
+  dispose(v.pradzia);
+  v.VDydis:=0;
 end;
 
-procedure VNaikElem(Nr:integer);
+procedure VNaikElem(var v:vect; Nr:integer);
   var tarpinis,E:vektor; i:integer;
 begin
-  E:=pradzia;
+  E:=v.pradzia;
   if Nr<1 then halt;
-  if Nr=1 then  begin E:=Pradzia;
-                      Pradzia:=Pradzia^.kitas;
+  if Nr=1 then  begin E:=v.Pradzia;
+                      v.Pradzia:=v.Pradzia^.kitas;
                       Dispose(E);
-                      dec(VDydis);
+                      dec(v.VDydis);
                 end
           else  begin for i:=1 to Nr-2 do E:=E^.kitas;
                       tarpinis:=E^.kitas;
                       E^.kitas:=tarpinis^.kitas;
                       dispose(tarpinis);
-                      Dec(VDydis);
+                      Dec(v.VDydis);
                 end;
 end;
 
-function VRask(Duom:duomenu_tipas):integer;
+function VRask(v:vect; Duom:duomenu_tipas):integer;
   var E:vektor; i:integer; Nerastas:boolean;
 begin
-  E:=pradzia;
+  E:=v.pradzia;
   Nerastas:=True;
   i:=1;
   while e<>nil do
    begin
-    if VElem(i)=duom then begin VRask:=i;
+    if VElem(v,i)=duom then begin VRask:=i;
                                 Nerastas:=False;
                                 Break;
                           end;
@@ -127,41 +130,41 @@ begin
   if nerastas then VRask:=0;
 end;
 
-procedure VIterpk(Nr:integer; duom:duomenu_tipas);
+procedure VIterpk(var v:vect; Nr:integer; duom:duomenu_tipas);
   var E,tarpinis:vektor; i:integer;
 begin
-  E:=pradzia;
+  E:=v.pradzia;
   if Nr<1 then halt;
-  if Nr=1 then begin if pradzia=nil then halt;
+  if Nr=1 then begin if v.pradzia=nil then halt;
   
                      new(tarpinis);
-                     tarpinis^.kitas:=pradzia;
+                     tarpinis^.kitas:=v.pradzia;
                      tarpinis^.duomenys:=duom;
-                     pradzia:=tarpinis;
-                     inc(VDydis);
+                     v.pradzia:=tarpinis;
+                     inc(v.VDydis);
                end
           else begin for i:=1 to Nr-2 do E:=E^.kitas;
                      new(tarpinis);
                      tarpinis^.kitas:=E^.kitas;
                      E^.kitas:=tarpinis;
                      tarpinis^.duomenys:=duom;
-                     inc(VDydis);
+                     inc(v.VDydis);
                end;
 end;
 
 
-procedure VKeisk(Nr:integer; duom:duomenu_tipas);
+procedure VKeisk(var v:vect; Nr:integer; duom:duomenu_tipas);
 var E,tarpinis:vektor; i:integer;
 begin
-  E:=pradzia;
+  E:=v.pradzia;
   if Nr<1 then halt;
   for i:=1 to Nr-1 do E:=E^.kitas;
   E^.duomenys:=duom;
 end;
 
-function VArSukurtas:boolean;
+function VArSukurtas(v:vect):boolean;
 begin
-  if pradzia= nil then VArSukurtas:=False
+  if v.pradzia= nil then VArSukurtas:=False
                   else VArSukurtas:=True;
 end;
 

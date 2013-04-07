@@ -6,9 +6,10 @@ uses vektorius, DuomenuTipas;
 
 type
   wvP = ^wrapped_vector;
+
   wrapped_vector = record
-    pradzia: vektorius.vektor;
-    elem: vektorius.vektor;
+    pradzia: vektor;
+    elem: vektor;
     dydis: longint;
   end;
 
@@ -25,5 +26,179 @@ procedure Keisk(vector: wvP; Nr: integer; duom: duomenu_tipas);
 function ArSukurtas(vector: wvP): boolean;
 
 implementation
+
+var
+  tmpPradzia, tmpElem: vektor;
+  tmpDydis: longint;
+
+procedure Kurk(vector: wvP);
+begin
+  tmpPradzia := pradzia;
+  tmpElem := elem;
+  tmpDydis := VDydis;
+
+  pradzia := vector^.pradzia;
+  elem := vector^.elem;
+  VDydis := vector^.dydis;
+
+  VKurk;
+
+  pradzia := tmpPradzia;
+  elem := tmpElem;
+  VDydis := tmpDydis;
+end;
+
+function ArSukurtas(vector: wvP): boolean;
+begin
+  tmpPradzia := pradzia;
+  tmpElem := elem;
+  tmpDydis := VDydis;
+
+  pradzia := vector^.pradzia;
+  elem := vector^.elem;
+  VDydis := vector^.dydis;
+
+  ArSukurtas := VArSukurtas;
+
+  pradzia := tmpPradzia;
+  elem := tmpElem;
+  VDydis := tmpDydis;
+end;
+
+function ElemTies(vector: wvP; Nr: integer): duomenu_tipas;
+begin
+  tmpPradzia := pradzia;
+  tmpElem := elem;
+  tmpDydis := VDydis;
+
+  pradzia := vector^.pradzia;
+  elem := vector^.elem;
+  VDydis := vector^.dydis;
+
+  ElemTies := VElem(Nr);
+
+  pradzia := tmpPradzia;
+  elem := tmpElem;
+  VDydis := tmpDydis;
+end;
+
+procedure Iterpk(vector: wvp; Nr: integer; duom: duomenu_tipas);
+begin
+  tmpPradzia := pradzia;
+  tmpElem := elem;
+  tmpDydis := VDydis;
+
+  pradzia := vector^.pradzia;
+  elem := vector^.elem;
+  VDydis := vector^.dydis;
+
+  VIterpk(Nr, Duom);
+
+  pradzia := tmpPradzia;
+  elem := tmpElem;
+  VDydis := tmpDydis;
+end;
+
+procedure Keisk(vector: wvP; Nr: integer; duom: duomenu_tipas);
+begin
+  tmpPradzia := pradzia;
+  tmpElem := elem;
+  tmpDydis := VDydis;
+
+  pradzia := vector^.pradzia;
+  elem := vector^.elem;
+  VDydis := vector^.dydis;
+
+  VKeisk(Nr, Duom);
+
+  pradzia := tmpPradzia;
+  elem := tmpElem;
+  VDydis := tmpDydis;
+end;
+
+procedure Naik(vector: wvP);
+begin
+  tmpPradzia := pradzia;
+  tmpElem := elem;
+  tmpDydis := VDydis;
+
+  pradzia := vector^.pradzia;
+  elem := vector^.elem;
+  VDydis := vector^.dydis;
+
+  VNaik;
+
+  pradzia := tmpPradzia;
+  elem := tmpElem;
+  VDydis := tmpDydis;
+end;
+
+procedure NaikElem(vector: wvP; Nr: integer);
+begin
+  tmpPradzia := pradzia;
+  tmpElem := elem;
+  tmpDydis := VDydis;
+
+  pradzia := vector^.pradzia;
+  elem := vector^.elem;
+  VDydis := vector^.dydis;
+
+  VNaikElem(Nr);
+
+  pradzia := tmpPradzia;
+  elem := tmpElem;
+  VDydis := tmpDydis;
+end;
+
+procedure Prid(vector: wvP; Duom: duomenu_tipas);
+begin
+  tmpPradzia := pradzia;
+  tmpElem := elem;
+  tmpDydis := VDydis;
+
+  pradzia := vector^.pradzia;
+  elem := vector^.elem;
+  VDydis := vector^.dydis;
+
+  VPrid(Duom);
+
+  pradzia := tmpPradzia;
+  elem := tmpElem;
+  VDydis := tmpDydis;
+end;
+
+function Ptk(vector: wvP): boolean;
+begin
+  tmpPradzia := pradzia;
+  tmpElem := elem;
+  tmpDydis := VDydis;
+
+  pradzia := vector^.pradzia;
+  elem := vector^.elem;
+  VDydis := vector^.dydis;
+
+  Ptk := VPtk;
+
+  pradzia := tmpPradzia;
+  elem := tmpElem;
+  VDydis := tmpDydis;
+end;
+
+procedure Rasyk(vector: wvP);
+begin
+  tmpPradzia := pradzia;
+  tmpElem := elem;
+  tmpDydis := VDydis;
+
+  pradzia := vector^.pradzia;
+  elem := vector^.elem;
+  VDydis := vector^.dydis;
+
+  VRasyk;
+
+  pradzia := tmpPradzia;
+  elem := tmpElem;
+  VDydis := tmpDydis;
+end;
 
 end.

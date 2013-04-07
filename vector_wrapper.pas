@@ -27,11 +27,10 @@ function ArSukurtas(vector: wvP): boolean;
 
 implementation
 
+procedure Kurk(vector: wvP);
 var
   tmpPradzia, tmpElem: vektor;
   tmpDydis: longint;
-
-procedure Kurk(vector: wvP);
 begin
   tmpPradzia := pradzia;
   tmpElem := elem;
@@ -52,6 +51,9 @@ begin
 end;
 
 function ArSukurtas(vector: wvP): boolean;
+var
+  tmpPradzia, tmpElem: vektor;
+  tmpDydis: longint;
 begin
   tmpPradzia := pradzia;
   tmpElem := elem;
@@ -69,6 +71,9 @@ begin
 end;
 
 function ElemTies(vector: wvP; Nr: integer): duomenu_tipas;
+var
+  tmpPradzia, tmpElem: vektor;
+  tmpDydis: longint;
 begin
   tmpPradzia := pradzia;
   tmpElem := elem;
@@ -86,6 +91,9 @@ begin
 end;
 
 procedure Iterpk(vector: wvp; Nr: integer; duom: duomenu_tipas);
+var
+  tmpPradzia, tmpElem: vektor;
+  tmpDydis: longint;
 begin
   tmpPradzia := pradzia;
   tmpElem := elem;
@@ -105,6 +113,9 @@ begin
 end;
 
 procedure Keisk(vector: wvP; Nr: integer; duom: duomenu_tipas);
+var
+  tmpPradzia, tmpElem: vektor;
+  tmpDydis: longint;
 begin
   tmpPradzia := pradzia;
   tmpElem := elem;
@@ -122,6 +133,9 @@ begin
 end;
 
 procedure Naik(vector: wvP);
+var
+  tmpPradzia, tmpElem: vektor;
+  tmpDydis: longint;
 begin
   tmpPradzia := pradzia;
   tmpElem := elem;
@@ -141,6 +155,9 @@ begin
 end;
 
 procedure NaikElem(vector: wvP; Nr: integer);
+var
+  tmpPradzia, tmpElem: vektor;
+  tmpDydis: longint;
 begin
   tmpPradzia := pradzia;
   tmpElem := elem;
@@ -160,6 +177,9 @@ begin
 end;
 
 procedure Prid(vector: wvP; Duom: duomenu_tipas);
+var
+  tmpPradzia, tmpElem: vektor;
+  tmpDydis: longint;
 begin
   tmpPradzia := pradzia;
   tmpElem := elem;
@@ -179,6 +199,9 @@ begin
 end;
 
 function Ptk(vector: wvP): boolean;
+var
+  tmpPradzia, tmpElem: vektor;
+  tmpDydis: longint;
 begin
   tmpPradzia := pradzia;
   tmpElem := elem;
@@ -196,6 +219,9 @@ begin
 end;
 
 procedure Rasyk(vector: wvP);
+var
+  tmpPradzia, tmpElem: vektor;
+  tmpDydis: longint;
 begin
   tmpPradzia := pradzia;
   tmpElem := elem;
@@ -213,6 +239,9 @@ begin
 end;
 
 function Rask(vector: wvP; Duom: duomenu_tipas): integer;
+var
+  tmpPradzia, tmpElem: vektor;
+  tmpDydis: longint;
 begin
   tmpPradzia := pradzia;
   tmpElem := elem;

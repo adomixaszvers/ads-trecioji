@@ -43,6 +43,9 @@ begin
 
   VKurk;
 
+  vector^.pradzia:= pradzia;
+  vector^.elem := elem;
+
   pradzia := tmpPradzia;
   elem := tmpElem;
   VDydis := tmpDydis;
@@ -94,6 +97,8 @@ begin
 
   VIterpk(Nr, Duom);
 
+  vector^.pradzia:= pradzia;
+
   pradzia := tmpPradzia;
   elem := tmpElem;
   VDydis := tmpDydis;
@@ -128,6 +133,8 @@ begin
 
   VNaik;
 
+  vector^.pradzia:= pradzia;
+
   pradzia := tmpPradzia;
   elem := tmpElem;
   VDydis := tmpDydis;
@@ -145,6 +152,8 @@ begin
 
   VNaikElem(Nr);
 
+  vector^.pradzia:= pradzia;
+
   pradzia := tmpPradzia;
   elem := tmpElem;
   VDydis := tmpDydis;
@@ -161,6 +170,8 @@ begin
   VDydis := vector^.dydis;
 
   VPrid(Duom);
+
+  vector^.elem := elem;
 
   pradzia := tmpPradzia;
   elem := tmpElem;
@@ -195,6 +206,23 @@ begin
   VDydis := vector^.dydis;
 
   VRasyk;
+
+  pradzia := tmpPradzia;
+  elem := tmpElem;
+  VDydis := tmpDydis;
+end;
+
+function Rask(vector: wvP; Duom: duomenu_tipas): integer;
+begin
+  tmpPradzia := pradzia;
+  tmpElem := elem;
+  tmpDydis := VDydis;
+
+  pradzia := vector^.pradzia;
+  elem := vector^.elem;
+  VDydis := vector^.dydis;
+
+  Rask := VRask(Duom);
 
   pradzia := tmpPradzia;
   elem := tmpElem;

@@ -4,7 +4,7 @@ program ads3;
 
 uses
   unitas,
-  vector_wrapper;
+  vektorius;
 
 begin
 end.

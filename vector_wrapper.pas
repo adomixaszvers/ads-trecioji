@@ -44,6 +44,7 @@ begin
 
   vector^.pradzia:= pradzia;
   vector^.elem := elem;
+  vector^.dydis:= VDydis;
 
   pradzia := tmpPradzia;
   elem := tmpElem;
@@ -106,6 +107,7 @@ begin
   VIterpk(Nr, Duom);
 
   vector^.pradzia:= pradzia;
+  vector^.dydis:= VDydis;
 
   pradzia := tmpPradzia;
   elem := tmpElem;
@@ -148,6 +150,7 @@ begin
   VNaik;
 
   vector^.pradzia:= pradzia;
+  vector^.dydis:= VDydis;
 
   pradzia := tmpPradzia;
   elem := tmpElem;
@@ -170,6 +173,7 @@ begin
   VNaikElem(Nr);
 
   vector^.pradzia:= pradzia;
+  vector^.dydis:= VDydis;
 
   pradzia := tmpPradzia;
   elem := tmpElem;
@@ -192,6 +196,7 @@ begin
   VPrid(Duom);
 
   vector^.elem := elem;
+  vector^.dydis:= VDydis;
 
   pradzia := tmpPradzia;
   elem := tmpElem;

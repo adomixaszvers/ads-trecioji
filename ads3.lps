@@ -11,8 +11,8 @@
         <IsVisibleTab Value="True"/>
         <EditorIndex Value="0"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="1"/>
-        <CursorPos X="25" Y="25"/>
+        <TopLine Value="42"/>
+        <CursorPos X="14" Y="40"/>
         <UsageCount Value="20"/>
         <Loaded Value="True"/>
       </Unit0>
@@ -49,11 +49,23 @@
     <General>
       <ActiveWindowIndexAtStart Value="0"/>
     </General>
-    <JumpHistory Count="1" HistoryIndex="0">
+    <JumpHistory Count="4" HistoryIndex="3">
       <Position1>
         <Filename Value="ads3.lpr"/>
         <Caret Line="12" Column="5" TopLine="1"/>
       </Position1>
+      <Position2>
+        <Filename Value="ads3.lpr"/>
+        <Caret Line="39" Column="21" TopLine="18"/>
+      </Position2>
+      <Position3>
+        <Filename Value="ads3.lpr"/>
+        <Caret Line="48" Column="16" TopLine="24"/>
+      </Position3>
+      <Position4>
+        <Filename Value="ads3.lpr"/>
+        <Caret Line="75" Column="5" TopLine="1"/>
+      </Position4>
     </JumpHistory>
   </ProjectSession>
 </CONFIG>

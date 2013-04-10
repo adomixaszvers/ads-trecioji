@@ -70,5 +70,21 @@ type
     Result := 0;
   end;
 
+procedure Rask(v: vect; duom: duomenu_tipas; var arRado: boolean; var indeksas: Longint);
+var
+  i: longint;
+begin
+  arRado:= False;
+  for i:= 1 to v.VDydis do
+  begin
+    if VElem(v, i) = duom then
+    begin
+       arRado:= True;
+       break;
+    end;
+  end;
+  indeksas:= i;
+end;
+
 begin
 end.

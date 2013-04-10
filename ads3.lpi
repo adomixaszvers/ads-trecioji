@@ -33,12 +33,32 @@
         <LaunchingApplication PathPlusParams="/usr/bin/xterm -T 'Lazarus Run Output' -e $(LazarusDir)/tools/runwait.sh $(TargetCmdLine)"/>
       </local>
     </RunParams>
-    <Units Count="1">
+    <Units Count="5">
       <Unit0>
         <Filename Value="ads3.lpr"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="ads3"/>
       </Unit0>
+      <Unit1>
+        <Filename Value="vektorius.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="vektorius"/>
+      </Unit1>
+      <Unit2>
+        <Filename Value="DuomenuTipas.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="DuomenuTipas"/>
+      </Unit2>
+      <Unit3>
+        <Filename Value="duom_type.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="duom_type"/>
+      </Unit3>
+      <Unit4>
+        <Filename Value="unitas.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="unitas"/>
+      </Unit4>
     </Units>
   </ProjectOptions>
   <CompilerOptions>
@@ -50,6 +70,15 @@
       <IncludeFiles Value="$(ProjOutDir)"/>
       <UnitOutputDirectory Value="lib/$(TargetCPU)-$(TargetOS)"/>
     </SearchPaths>
+    <Parsing>
+      <Style Value="1"/>
+    </Parsing>
+    <Linking>
+      <Debugging>
+        <UseHeaptrc Value="True"/>
+        <UseValgrind Value="True"/>
+      </Debugging>
+    </Linking>
     <Other>
       <CompilerMessages>
         <MsgFileName Value=""/>

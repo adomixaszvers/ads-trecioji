@@ -3,7 +3,7 @@
   <ProjectSession>
     <Version Value="9"/>
     <BuildModes Active="Default"/>
-    <Units Count="1">
+    <Units Count="5">
       <Unit0>
         <Filename Value="ads3.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -12,14 +12,48 @@
         <EditorIndex Value="0"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
-        <CursorPos X="1" Y="11"/>
+        <CursorPos X="25" Y="25"/>
         <UsageCount Value="20"/>
         <Loaded Value="True"/>
       </Unit0>
+      <Unit1>
+        <Filename Value="vektorius.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="vektorius"/>
+        <EditorIndex Value="1"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="7"/>
+        <CursorPos X="1" Y="1"/>
+        <UsageCount Value="20"/>
+        <Loaded Value="True"/>
+      </Unit1>
+      <Unit2>
+        <Filename Value="DuomenuTipas.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="DuomenuTipas"/>
+        <UsageCount Value="20"/>
+      </Unit2>
+      <Unit3>
+        <Filename Value="duom_type.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="duom_type"/>
+        <UsageCount Value="20"/>
+      </Unit3>
+      <Unit4>
+        <Filename Value="unitas.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="unitas"/>
+        <UsageCount Value="20"/>
+      </Unit4>
     </Units>
     <General>
       <ActiveWindowIndexAtStart Value="0"/>
     </General>
-    <JumpHistory Count="0" HistoryIndex="-1"/>
+    <JumpHistory Count="1" HistoryIndex="0">
+      <Position1>
+        <Filename Value="ads3.lpr"/>
+        <Caret Line="12" Column="5" TopLine="1"/>
+      </Position1>
+    </JumpHistory>
   </ProjectSession>
 </CONFIG>

@@ -53,12 +53,14 @@ type
     if (skait_at_tik < 0) or (100 < skait_at_tik) then
     begin
       Result := 2;
+      Close(df);
       Exit;
     end;
     Read(df, ar_yra_knyga);
     if (ar_yra_knyga < 0) or (100 < ar_yra_knyga) then
     begin
       Result := 3;
+      Close(df);
       Exit;
     end;
     VKurk(v);
@@ -68,23 +70,35 @@ type
       VPrid(v, tmp);
     end;
     Result := 0;
+    Close(df);
   end;
 
-procedure Rask(v: vect; duom: duomenu_tipas; var arRado: boolean; var indeksas: Longint);
-var
-  i: longint;
-begin
-  arRado:= False;
-  for i:= 1 to v.VDydis do
+  procedure Rask(v: vect; duom: duomenu_tipas; var arRado: boolean; var indeksas: longint);
+  var
+    i: longint;
   begin
-    if VElem(v, i) = duom then
+    arRado := False;
+    for i := 1 to v.VDydis do
     begin
-       arRado:= True;
-       break;
+      if VElem(v, i) = duom then
+      begin
+        arRado := True;
+        break;
+      end;
     end;
+    indeksas := i;
   end;
-  indeksas:= i;
-end;
+
+var
+  skait_at_tik, ar_yra_knyga: shortint;
+  v: vect;
 
 begin
+  if ParamSkaitymas('param.txt', skait_at_tik, ar_yra_knyga, v) = 0 then
+  begin
+
+    SurusiuotiVek(v);
+    VRasyk(v); WriteLn;
+    VNaik(v);
+  end;
 end.

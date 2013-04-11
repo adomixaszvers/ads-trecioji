@@ -75,7 +75,6 @@
     </Parsing>
     <Linking>
       <Debugging>
-        <UseHeaptrc Value="True"/>
         <UseValgrind Value="True"/>
       </Debugging>
     </Linking>

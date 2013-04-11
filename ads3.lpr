@@ -69,6 +69,7 @@ type
       Read(df, tmp);
       VPrid(v, tmp);
     end;
+    VNaikElem(v, v.VDydis); //Kazkodėl vis nulį prideda
     Result := 0;
     Close(df);
   end;
@@ -96,7 +97,7 @@ var
 begin
   if ParamSkaitymas('param.txt', skait_at_tik, ar_yra_knyga, v) = 0 then
   begin
-
+    VRasyk(v); WriteLn;
     SurusiuotiVek(v);
     VRasyk(v); WriteLn;
     VNaik(v);

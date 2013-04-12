@@ -160,6 +160,8 @@ type
         if Ivykis(ar_yra_knyga) then
         begin
           per_kiek := Random(knygos_n.VDydis) + 1;
+          if per_kiek > knygos_n.VDydis then
+             per_kiek := knygos_n.VDydis;
           VPrid(darb_n, per_kiek);
           ieskoma := VElem(knygos_n, per_kiek);
           VNaikElem(knygos_n, per_kiek);

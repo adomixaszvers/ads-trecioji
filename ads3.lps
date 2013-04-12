@@ -8,36 +8,36 @@
         <Filename Value="ads3.lpr"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="ads3"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="0"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="161"/>
-        <CursorPos X="19" Y="106"/>
-        <UsageCount Value="29"/>
+        <TopLine Value="158"/>
+        <CursorPos X="42" Y="164"/>
+        <UsageCount Value="31"/>
         <Loaded Value="True"/>
       </Unit0>
       <Unit1>
         <Filename Value="vektorius.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="vektorius"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="2"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="37"/>
+        <TopLine Value="49"/>
         <CursorPos X="35" Y="50"/>
-        <UsageCount Value="29"/>
+        <UsageCount Value="31"/>
         <Loaded Value="True"/>
       </Unit1>
       <Unit2>
         <Filename Value="DuomenuTipas.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="DuomenuTipas"/>
-        <UsageCount Value="29"/>
+        <UsageCount Value="31"/>
       </Unit2>
       <Unit3>
         <Filename Value="duom_type.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="duom_type"/>
-        <UsageCount Value="29"/>
+        <UsageCount Value="31"/>
       </Unit3>
       <Unit4>
         <Filename Value="unitas.pas"/>
@@ -47,7 +47,7 @@
         <WindowIndex Value="0"/>
         <TopLine Value="152"/>
         <CursorPos X="11" Y="162"/>
-        <UsageCount Value="29"/>
+        <UsageCount Value="31"/>
         <Loaded Value="True"/>
       </Unit4>
       <Unit5>
@@ -62,7 +62,7 @@
     <General>
       <ActiveWindowIndexAtStart Value="0"/>
     </General>
-    <JumpHistory Count="30" HistoryIndex="29">
+    <JumpHistory Count="29" HistoryIndex="28">
       <Position1>
         <Filename Value="ads3.lpr"/>
         <Caret Line="122" Column="43" TopLine="112"/>
@@ -173,16 +173,12 @@
       </Position27>
       <Position28>
         <Filename Value="vektorius.pas"/>
-        <Caret Line="33" Column="11" TopLine="68"/>
+        <Caret Line="50" Column="21" TopLine="25"/>
       </Position28>
       <Position29>
-        <Filename Value="vektorius.pas"/>
-        <Caret Line="46" Column="11" TopLine="91"/>
+        <Filename Value="ads3.lpr"/>
+        <Caret Line="106" Column="19" TopLine="51"/>
       </Position29>
-      <Position30>
-        <Filename Value="vektorius.pas"/>
-        <Caret Line="50" Column="21" TopLine="25"/>
-      </Position30>
     </JumpHistory>
   </ProjectSession>
 </CONFIG>

@@ -2,7 +2,8 @@ unit DuomenuTipas;
 
 interface
 
-type duomenu_tipas=longint;
+type
+  duomenu_tipas = longint;
 
 implementation
 

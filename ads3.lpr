@@ -3,13 +3,14 @@ program ads3;
 
 
 uses
-  unitas,
+  heaptrc,
   vektorius,
   DuomenuTipas,
-  duom_type;
+  Tipai,
+  ProcNFunc;
 
 const
-  DarboLaikas = 1440;
+  DarboLaikas = 200;
 
 type
   dtP = ^duomenu_tipas;
@@ -45,21 +46,21 @@ type
     Reset(df);
     if IOResult <> 0 then
     begin
-      Result := 1;
+      ParamSkaitymas := 1;
       Exit;
     end;
   {$I+}
     Read(df, skait_at_tik);
     if (skait_at_tik < 0) or (100 < skait_at_tik) then
     begin
-      Result := 2;
+      ParamSkaitymas := 2;
       Close(df);
       Exit;
     end;
     Read(df, ar_yra_knyga);
     if (ar_yra_knyga < 0) or (100 < ar_yra_knyga) then
     begin
-      Result := 3;
+      ParamSkaitymas := 3;
       Close(df);
       Exit;
     end;
@@ -70,7 +71,7 @@ type
       VPrid(v, tmp);
     end;
     VNaikElem(v, v.VDydis); //Kazkodėl vis nulį prideda
-    Result := 0;
+    ParamSkaitymas := 0;
     Close(df);
   end;
 
@@ -91,6 +92,24 @@ type
     indeksas := i;
   end;
 
+  procedure Rask(m: TreeType; key: KeyType; var indeksas: longint);
+  var
+    elem: TreePtrType;
+  begin
+      indeksas := 0;
+      elem := m;
+      while elem <> nil do
+      begin
+        inc(indeksas);
+        if elem^.info.key = key then
+           break;
+        if elem^.info.key > key then
+           elem := elem^.Left
+        else
+          elem:=elem^.Right;
+      end;
+  end;
+
   procedure VKopijuok(saltinis: vect; var tikslas: vect);
   var
     i: longint;
@@ -104,6 +123,7 @@ type
   procedure VMazinkVienetu(var v: vect);
   var
     i, j: longint;
+    temp: duomenu_tipas;
   begin
     i := 1;
     j := 0;
@@ -117,20 +137,23 @@ type
         Inc(i);
   end;
 
-  procedure MKopijuok(v: vect; var m: TMedis);
+  procedure MKopijuok(v: vect; var m: TreeType);
   var
     i: longint;
     klaida: boolean;
+    tmp: TreeElementType;
   begin
-    Naikinti_Medi(m);
-    Kurti(m, klaida);
+    CreateTree(m);
     for i := 1 to v.VDydis do
-      Iterpimas_Medis(VElem(v, i), m, klaida);
+    begin
+      tmp.key:=VElem(v, i);
+      InsertElement(m, tmp);
+    end;
   end;
 
   function Ivykis(tikimybe: shortint): boolean;
   begin
-    Result := Random(101) >= tikimybe;
+    Ivykis := Random(101) >= tikimybe;
   end;
 
   procedure DarboDiena(skait_at_tik, ar_yra_knyga: shortint; v: vect;
@@ -138,8 +161,9 @@ type
   var
     dabartinis_laikas: integer;
     per_kiek: longint;
+    per_kiek_small: smallint;
     ieskoma: duomenu_tipas;
-    knygos_m: TMedis;
+    knygos_m: TreeType;
     knygos_n, knygos_r, darb_n, darb_r, darb_m: vect;
     klaida: boolean;
   begin
@@ -155,7 +179,7 @@ type
     VKurk(darb_m);
     for dabartinis_laikas := 0 to DarboLaikas - 1 do
     begin
-      if Ivykis(skait_at_tik) then
+      if Ivykis(skait_at_tik) and (knygos_n.VDydis > 0) then
       begin
         if Ivykis(ar_yra_knyga) then
         begin
@@ -168,8 +192,8 @@ type
           VNaikElem(knygos_r, per_kiek);
           VPrid(darb_r, per_kiek);
 
-          RASK_EL(ieskoma, knygos_m, per_kiek, klaida);
-          Naikinti_el(knygos_m, ieskoma, klaida);
+          Rask(knygos_m, ieskoma, per_kiek);
+          DeleteElement(knygos_m, ieskoma);
           VPrid(darb_m, per_kiek);
 
           if max_darb_n < darb_n.VDydis then
@@ -183,16 +207,19 @@ type
         end;
       end;
       WriteLn('Ciklas ', dabartinis_laikas);
-      VRasyk(darb_n); WriteLn;
+      VRasyk(darb_n);
+      WriteLn(':',darb_n.VDydis);
       VMazinkVienetu(darb_n);
-      VRasyk(darb_r); WriteLn;
+      VRasyk(darb_r);
+      WriteLn(':',darb_r.VDydis);
       VMazinkVienetu(darb_r);
-      VRasyk(darb_m); WriteLn;
+      VRasyk(darb_m);
+      WriteLn(':',darb_m.VDydis);
       VMazinkVienetu(darb_m);
     end;
     VNaik(knygos_n);
     VNaik(knygos_r);
-    Naikinti_Medi(knygos_m);
+    DestroyTree(knygos_m);
     VNaik(darb_n);
     VNaik(darb_r);
     VNaik(darb_m);
@@ -206,15 +233,17 @@ var
 begin
   if ParamSkaitymas('param.txt', skait_at_tik, ar_yra_knyga, v) = 0 then
   begin
+    Randomize;
     DarboDiena(skait_at_tik, ar_yra_knyga, v, max_darb_n, max_darb_r, max_darb_m);
     WriteLn(max_darb_n);
     WriteLn(max_darb_r);
     WriteLn(max_darb_m);
+    VNaik(v);
     {while v.VDydis > 0 do
     begin
       VRasyk(v);
       WriteLn;
       VMazinkVienetu(v);
-    end;}
+    VRasyk(v); WriteLn;}
   end;
 end.

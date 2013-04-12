@@ -74,7 +74,8 @@ type
     Close(df);
   end;
 
-  procedure Rask(v: vect; duom: duomenu_tipas; var arRado: boolean; var indeksas: longint);
+  procedure Rask(v: vect; duom: duomenu_tipas; var arRado: boolean;
+  var indeksas: longint);
   var
     i: longint;
   begin
@@ -90,6 +91,33 @@ type
     indeksas := i;
   end;
 
+  procedure VKopijuok(saltinis: vect; var tikslas: vect);
+  var
+    i: longint;
+  begin
+    VNaik(tikslas);
+    for i := 1 to saltinis.VDydis do
+      VPrid(tikslas, VElem(saltinis, i));
+  end;
+
+  procedure VMazinkVienetu(var v: vect);
+  var
+    i: longint;
+  begin
+    i := 1;
+    while i <= v.VDydis do
+    begin
+      if VElem(v, i) = 0 then
+      begin
+        while VElem(v, i) = 0 do
+          VNaikElem(v, i);
+      end
+      else
+        VKeisk(v, i, VElem(v, i) - 1);
+      inc(i);
+    end;
+  end;
+
 var
   skait_at_tik, ar_yra_knyga: shortint;
   v: vect;
@@ -97,9 +125,11 @@ var
 begin
   if ParamSkaitymas('param.txt', skait_at_tik, ar_yra_knyga, v) = 0 then
   begin
-    VRasyk(v); WriteLn;
+    VRasyk(v);
+    WriteLn;
     SurusiuotiVek(v);
-    VRasyk(v); WriteLn;
+    VRasyk(v);
+    WriteLn;
     VNaik(v);
   end;
 end.

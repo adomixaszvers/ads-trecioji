@@ -3,7 +3,7 @@
   <ProjectSession>
     <Version Value="9"/>
     <BuildModes Active="Default"/>
-    <Units Count="5">
+    <Units Count="6">
       <Unit0>
         <Filename Value="ads3.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -11,9 +11,9 @@
         <IsVisibleTab Value="True"/>
         <EditorIndex Value="0"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="63"/>
-        <CursorPos X="56" Y="72"/>
-        <UsageCount Value="20"/>
+        <TopLine Value="96"/>
+        <CursorPos X="14" Y="117"/>
+        <UsageCount Value="21"/>
         <Loaded Value="True"/>
       </Unit0>
       <Unit1>
@@ -24,32 +24,40 @@
         <WindowIndex Value="0"/>
         <TopLine Value="7"/>
         <CursorPos X="1" Y="1"/>
-        <UsageCount Value="20"/>
+        <UsageCount Value="21"/>
         <Loaded Value="True"/>
       </Unit1>
       <Unit2>
         <Filename Value="DuomenuTipas.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="DuomenuTipas"/>
-        <UsageCount Value="20"/>
+        <UsageCount Value="21"/>
       </Unit2>
       <Unit3>
         <Filename Value="duom_type.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="duom_type"/>
-        <UsageCount Value="20"/>
+        <UsageCount Value="21"/>
       </Unit3>
       <Unit4>
         <Filename Value="unitas.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="unitas"/>
-        <UsageCount Value="20"/>
+        <UsageCount Value="21"/>
       </Unit4>
+      <Unit5>
+        <Filename Value="../medis2/sumenu.pas"/>
+        <UnitName Value="SuMenu"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="70"/>
+        <CursorPos X="1" Y="1"/>
+        <UsageCount Value="10"/>
+      </Unit5>
     </Units>
     <General>
       <ActiveWindowIndexAtStart Value="0"/>
     </General>
-    <JumpHistory Count="12" HistoryIndex="11">
+    <JumpHistory Count="13" HistoryIndex="12">
       <Position1>
         <Filename Value="ads3.lpr"/>
         <Caret Line="12" Column="5" TopLine="1"/>
@@ -98,6 +106,10 @@
         <Filename Value="ads3.lpr"/>
         <Caret Line="95" Column="6" TopLine="78"/>
       </Position12>
+      <Position13>
+        <Filename Value="ads3.lpr"/>
+        <Caret Line="113" Column="39" TopLine="84"/>
+      </Position13>
     </JumpHistory>
   </ProjectSession>
 </CONFIG>

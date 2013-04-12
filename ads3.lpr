@@ -3,7 +3,7 @@ program ads3;
 
 
 uses
-  //heaptrc,
+  heaptrc,
   unitas,
   vektorius,
   DuomenuTipas,

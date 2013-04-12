@@ -108,13 +108,13 @@ type
     i := 1;
     j := 0;
     for i := 1 to v.VDydis do
-        VKeisk(v, i, VElem(v, i)-1);
+      VKeisk(v, i, VElem(v, i) - 1);
     i := 1;
     while i <= v.VDydis do
-          if VElem(v, i) = 0 then
-             VNaikElem(v, i)
-          else
-            inc(i);
+      if VElem(v, i) = 0 then
+        VNaikElem(v, i)
+      else
+        Inc(i);
   end;
 
   procedure MKopijuok(v: vect; var m: TMedis);
@@ -181,17 +181,27 @@ type
           if max_darb_m < darb_m.VDydis then
             max_darb_m := darb_m.VDydis;
         end;
-        VMazinkVienetu(darb_n);
-        VMazinkVienetu(darb_r);
-        VMazinkVienetu(darb_m);
       end;
+      WriteLn('Ciklas ', dabartinis_laikas);
+      VRasyk(darb_n); WriteLn;
+      VMazinkVienetu(darb_n);
+      VRasyk(darb_r); WriteLn;
+      VMazinkVienetu(darb_r);
+      VRasyk(darb_m); WriteLn;
+      VMazinkVienetu(darb_m);
     end;
+    VNaik(knygos_n);
+    VNaik(knygos_r);
+    Naikinti_Medi(knygos_m);
+    VNaik(darb_n);
+    VNaik(darb_r);
+    VNaik(darb_m);
   end;
 
 var
   skait_at_tik, ar_yra_knyga: shortint;
   v: vect;
-  max_darb_n, max_darb_r, max_darb_m: Longint;
+  max_darb_n, max_darb_r, max_darb_m: longint;
 
 begin
   if ParamSkaitymas('param.txt', skait_at_tik, ar_yra_knyga, v) = 0 then
@@ -200,5 +210,11 @@ begin
     WriteLn(max_darb_n);
     WriteLn(max_darb_r);
     WriteLn(max_darb_m);
+    {while v.VDydis > 0 do
+    begin
+      VRasyk(v);
+      WriteLn;
+      VMazinkVienetu(v);
+    end;}
   end;
 end.

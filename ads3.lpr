@@ -3,13 +3,14 @@ program ads3;
 
 
 uses
+  //heaptrc,
   unitas,
   vektorius,
   DuomenuTipas,
   duom_type;
 
 const
-  DarboLaikas = 1440;
+  DarboLaikas = 200;
 
 type
   dtP = ^duomenu_tipas;
@@ -45,21 +46,21 @@ type
     Reset(df);
     if IOResult <> 0 then
     begin
-      Result := 1;
+      ParamSkaitymas := 1;
       Exit;
     end;
   {$I+}
     Read(df, skait_at_tik);
     if (skait_at_tik < 0) or (100 < skait_at_tik) then
     begin
-      Result := 2;
+      ParamSkaitymas := 2;
       Close(df);
       Exit;
     end;
     Read(df, ar_yra_knyga);
     if (ar_yra_knyga < 0) or (100 < ar_yra_knyga) then
     begin
-      Result := 3;
+      ParamSkaitymas := 3;
       Close(df);
       Exit;
     end;
@@ -70,7 +71,7 @@ type
       VPrid(v, tmp);
     end;
     VNaikElem(v, v.VDydis); //Kazkodėl vis nulį prideda
-    Result := 0;
+    ParamSkaitymas := 0;
     Close(df);
   end;
 
@@ -130,7 +131,7 @@ type
 
   function Ivykis(tikimybe: shortint): boolean;
   begin
-    Result := Random(101) >= tikimybe;
+    Ivykis := Random(101) >= tikimybe;
   end;
 
   procedure DarboDiena(skait_at_tik, ar_yra_knyga: shortint; v: vect;
@@ -138,6 +139,7 @@ type
   var
     dabartinis_laikas: integer;
     per_kiek: longint;
+    per_kiek_small: smallint;
     ieskoma: duomenu_tipas;
     knygos_m: TMedis;
     knygos_n, knygos_r, darb_n, darb_r, darb_m: vect;
@@ -155,13 +157,11 @@ type
     VKurk(darb_m);
     for dabartinis_laikas := 0 to DarboLaikas - 1 do
     begin
-      if Ivykis(skait_at_tik) then
+      if Ivykis(skait_at_tik) and (knygos_n.VDydis > 0) then
       begin
         if Ivykis(ar_yra_knyga) then
         begin
           per_kiek := Random(knygos_n.VDydis) + 1;
-          if per_kiek > knygos_n.VDydis then
-             per_kiek := knygos_n.VDydis;
           VPrid(darb_n, per_kiek);
           ieskoma := VElem(knygos_n, per_kiek);
           VNaikElem(knygos_n, per_kiek);
@@ -170,9 +170,9 @@ type
           VNaikElem(knygos_r, per_kiek);
           VPrid(darb_r, per_kiek);
 
-          RASK_EL(ieskoma, knygos_m, per_kiek, klaida);
+          RASK_EL(ieskoma, knygos_m, per_kiek_small, klaida);
           Naikinti_el(knygos_m, ieskoma, klaida);
-          VPrid(darb_m, per_kiek);
+          VPrid(darb_m, per_kiek_small);
 
           if max_darb_n < darb_n.VDydis then
             max_darb_n := darb_n.VDydis;
@@ -185,11 +185,14 @@ type
         end;
       end;
       WriteLn('Ciklas ', dabartinis_laikas);
-      VRasyk(darb_n); WriteLn;
+      VRasyk(darb_n);
+      WriteLn;
       VMazinkVienetu(darb_n);
-      VRasyk(darb_r); WriteLn;
+      VRasyk(darb_r);
+      WriteLn;
       VMazinkVienetu(darb_r);
-      VRasyk(darb_m); WriteLn;
+      VRasyk(darb_m);
+      WriteLn;
       VMazinkVienetu(darb_m);
     end;
     VNaik(knygos_n);
@@ -208,10 +211,12 @@ var
 begin
   if ParamSkaitymas('param.txt', skait_at_tik, ar_yra_knyga, v) = 0 then
   begin
+    Randomize;
     DarboDiena(skait_at_tik, ar_yra_knyga, v, max_darb_n, max_darb_r, max_darb_m);
     WriteLn(max_darb_n);
     WriteLn(max_darb_r);
     WriteLn(max_darb_m);
+    VNaik(v);
     {while v.VDydis > 0 do
     begin
       VRasyk(v);

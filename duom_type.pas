@@ -2,7 +2,8 @@ unit Duom_Type;
 
 interface
 
-type DuomType = integer;
+type
+  DuomType = integer;
 
 implementation
 

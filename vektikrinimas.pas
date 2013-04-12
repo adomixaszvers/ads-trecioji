@@ -1,6 +1,6 @@
 Program Tikrinimas;
 
-Uses vektorius;
+Uses vektorius, heaptrc;
 
 var
 	v: vect;

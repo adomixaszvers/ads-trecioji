@@ -96,6 +96,7 @@ type
     i: longint;
   begin
     VNaik(tikslas);
+    VKurk(tikslas);
     for i := 1 to saltinis.VDydis do
       VPrid(tikslas, VElem(saltinis, i));
   end;
@@ -107,20 +108,92 @@ type
     i := 1;
     while i <= v.VDydis do
     begin
-      if VElem(v, i) = 0 then
+      if VElem(v, i) <= 1 then
       begin
-        while VElem(v, i) = 0 do
+        while VElem(v, i) <= 1 do
           VNaikElem(v, i);
       end
       else
         VKeisk(v, i, VElem(v, i) - 1);
-      inc(i);
+      Inc(i);
+    end;
+  end;
+
+  procedure MKopijuok(v: vect; var m: TMedis);
+  var
+    i: longint;
+    klaida: boolean;
+  begin
+    Naikinti_Medi(m);
+    Kurti(m, klaida);
+    for i := 1 to v.VDydis do
+      Iterpimas_Medis(VElem(v, i), m, klaida);
+  end;
+
+  function Ivykis(tikimybe: shortint): boolean;
+  begin
+    Result := Random(101) >= tikimybe;
+  end;
+
+  procedure DarboDiena(skait_at_tik, ar_yra_knyga: shortint; v: vect;
+  var max_darb_n, max_darb_r, max_darb_m: longint);
+  var
+    dabartinis_laikas: integer;
+    per_kiek: longint;
+    ieskoma: duomenu_tipas;
+    knygos_m: TMedis;
+    knygos_n, knygos_r, darb_n, darb_r, darb_m: vect;
+    klaida: boolean;
+  begin
+    max_darb_n := 0;
+    max_darb_r := 0;
+    max_darb_r := 0;
+    VKopijuok(v, knygos_n);
+    VKopijuok(v, knygos_r);
+    SurusiuotiVek(knygos_r);
+    MKopijuok(v, knygos_m);
+    VKurk(darb_n);
+    VKurk(darb_r);
+    VKurk(darb_m);
+    for dabartinis_laikas := 0 to DarboLaikas - 1 do
+    begin
+      if Ivykis(skait_at_tik) then
+      begin
+        if Ivykis(ar_yra_knyga) then
+        begin
+          per_kiek := Random(knygos_n.VDydis) + 1;
+          VPrid(darb_n, per_kiek);
+          ieskoma := VElem(knygos_n, per_kiek);
+          VNaikElem(knygos_n, per_kiek);
+
+          Rask(knygos_r, ieskoma, klaida, per_kiek);
+          VNaikElem(knygos_r, per_kiek);
+          VPrid(darb_r, per_kiek);
+
+          RASK_EL(ieskoma, knygos_m, per_kiek, klaida);
+          Naikinti_el(knygos_m, ieskoma, klaida);
+          VPrid(darb_m, per_kiek);
+
+          if max_darb_n < darb_n.VDydis then
+            max_darb_n := darb_n.VDydis;
+
+          if max_darb_r < darb_r.VDydis then
+            max_darb_r := darb_r.VDydis;
+
+          if max_darb_m < darb_m.VDydis then
+            max_darb_m := darb_m.VDydis;
+        end;
+        VMazinkVienetu(darb_n);
+        VMazinkVienetu(darb_r);
+        VMazinkVienetu(darb_m);
+      end;
     end;
   end;
 
 var
   skait_at_tik, ar_yra_knyga: shortint;
   v: vect;
+  max_darb_n, max_darb_r, max_darb_m: Longint;
 
 begin
   if ParamSkaitymas('param.txt', skait_at_tik, ar_yra_knyga, v) = 0 then

@@ -105,11 +105,15 @@ type
   procedure VMazinkVienetu(var v: vect);
   var
     i, j: longint;
+    temp: duomenu_tipas;
   begin
     i := 1;
     j := 0;
     for i := 1 to v.VDydis do
-      VKeisk(v, i, VElem(v, i) - 1);
+    begin
+      temp := VElem(v, i);
+      VKeisk(v, i, temp - 1);
+    end;
     i := 1;
     while i <= v.VDydis do
       if VElem(v, i) = 0 then
@@ -152,6 +156,7 @@ type
     VKopijuok(v, knygos_r);
     SurusiuotiVek(knygos_r);
     MKopijuok(v, knygos_m);
+    Balansavimas(knygos_m, klaida);
     VKurk(darb_n);
     VKurk(darb_r);
     VKurk(darb_m);
@@ -186,13 +191,13 @@ type
       end;
       WriteLn('Ciklas ', dabartinis_laikas);
       VRasyk(darb_n);
-      WriteLn;
+      WriteLn(':',darb_n.VDydis);
       VMazinkVienetu(darb_n);
       VRasyk(darb_r);
-      WriteLn;
+      WriteLn(':',darb_r.VDydis);
       VMazinkVienetu(darb_r);
       VRasyk(darb_m);
-      WriteLn;
+      WriteLn(':',darb_m.VDydis);
       VMazinkVienetu(darb_m);
     end;
     VNaik(knygos_n);
@@ -222,6 +227,7 @@ begin
       VRasyk(v);
       WriteLn;
       VMazinkVienetu(v);
-    end;}
+    end;
+    VRasyk(v); WriteLn;}
   end;
 end.

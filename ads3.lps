@@ -11,9 +11,9 @@
         <IsVisibleTab Value="True"/>
         <EditorIndex Value="0"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="1"/>
-        <CursorPos X="5" Y="6"/>
-        <UsageCount Value="33"/>
+        <TopLine Value="147"/>
+        <CursorPos X="34" Y="159"/>
+        <UsageCount Value="36"/>
         <Loaded Value="True"/>
       </Unit0>
       <Unit1>
@@ -22,22 +22,22 @@
         <UnitName Value="vektorius"/>
         <EditorIndex Value="2"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="1"/>
-        <CursorPos X="11" Y="122"/>
-        <UsageCount Value="33"/>
+        <TopLine Value="130"/>
+        <CursorPos X="20" Y="144"/>
+        <UsageCount Value="36"/>
         <Loaded Value="True"/>
       </Unit1>
       <Unit2>
         <Filename Value="DuomenuTipas.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="DuomenuTipas"/>
-        <UsageCount Value="33"/>
+        <UsageCount Value="36"/>
       </Unit2>
       <Unit3>
         <Filename Value="duom_type.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="duom_type"/>
-        <UsageCount Value="33"/>
+        <UsageCount Value="36"/>
       </Unit3>
       <Unit4>
         <Filename Value="unitas.pas"/>
@@ -45,9 +45,9 @@
         <UnitName Value="unitas"/>
         <EditorIndex Value="1"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="406"/>
+        <TopLine Value="28"/>
         <CursorPos X="11" Y="162"/>
-        <UsageCount Value="33"/>
+        <UsageCount Value="36"/>
         <Loaded Value="True"/>
       </Unit4>
       <Unit5>
@@ -65,123 +65,123 @@
     <JumpHistory Count="30" HistoryIndex="29">
       <Position1>
         <Filename Value="ads3.lpr"/>
-        <Caret Line="78" Column="25" TopLine="68"/>
+        <Caret Line="73" Column="26" TopLine="63"/>
       </Position1>
       <Position2>
         <Filename Value="ads3.lpr"/>
-        <Caret Line="193" Column="15" TopLine="175"/>
+        <Caret Line="120" Column="23" TopLine="112"/>
       </Position2>
       <Position3>
-        <Filename Value="vektorius.pas"/>
-        <Caret Line="89" Column="25" TopLine="70"/>
+        <Filename Value="ads3.lpr"/>
+        <Caret Line="5" Column="31" TopLine="1"/>
       </Position3>
       <Position4>
-        <Filename Value="vektorius.pas"/>
-        <Caret Line="168" Column="10" TopLine="155"/>
+        <Filename Value="ads3.lpr"/>
+        <Caret Line="24" Column="27" TopLine="8"/>
       </Position4>
       <Position5>
-        <Filename Value="vektorius.pas"/>
-        <Caret Line="77" Column="10" TopLine="67"/>
+        <Filename Value="ads3.lpr"/>
+        <Caret Line="27" Column="33" TopLine="11"/>
       </Position5>
       <Position6>
-        <Filename Value="vektorius.pas"/>
-        <Caret Line="46" Column="11" TopLine="48"/>
+        <Filename Value="ads3.lpr"/>
+        <Caret Line="73" Column="26" TopLine="57"/>
       </Position6>
       <Position7>
-        <Filename Value="vektorius.pas"/>
-        <Caret Line="41" Column="10" TopLine="31"/>
+        <Filename Value="ads3.lpr"/>
+        <Caret Line="84" Column="27" TopLine="68"/>
       </Position7>
       <Position8>
-        <Filename Value="vektorius.pas"/>
-        <Caret Line="118" Column="10" TopLine="108"/>
+        <Filename Value="ads3.lpr"/>
+        <Caret Line="101" Column="34" TopLine="85"/>
       </Position8>
       <Position9>
-        <Filename Value="vektorius.pas"/>
-        <Caret Line="77" Column="10" TopLine="67"/>
+        <Filename Value="ads3.lpr"/>
+        <Caret Line="112" Column="27" TopLine="96"/>
       </Position9>
       <Position10>
         <Filename Value="ads3.lpr"/>
-        <Caret Line="2" Column="31" TopLine="1"/>
+        <Caret Line="118" Column="24" TopLine="102"/>
       </Position10>
       <Position11>
         <Filename Value="ads3.lpr"/>
-        <Caret Line="46" Column="16" TopLine="30"/>
+        <Caret Line="132" Column="27" TopLine="116"/>
       </Position11>
       <Position12>
         <Filename Value="ads3.lpr"/>
-        <Caret Line="48" Column="21" TopLine="32"/>
+        <Caret Line="164" Column="51" TopLine="148"/>
       </Position12>
       <Position13>
         <Filename Value="ads3.lpr"/>
-        <Caret Line="55" Column="21" TopLine="40"/>
+        <Caret Line="168" Column="45" TopLine="152"/>
       </Position13>
       <Position14>
         <Filename Value="ads3.lpr"/>
-        <Caret Line="62" Column="21" TopLine="46"/>
+        <Caret Line="181" Column="40" TopLine="165"/>
       </Position14>
       <Position15>
         <Filename Value="ads3.lpr"/>
-        <Caret Line="73" Column="19" TopLine="57"/>
+        <Caret Line="182" Column="40" TopLine="166"/>
       </Position15>
       <Position16>
         <Filename Value="ads3.lpr"/>
-        <Caret Line="133" Column="11" TopLine="117"/>
+        <Caret Line="184" Column="40" TopLine="168"/>
       </Position16>
       <Position17>
         <Filename Value="ads3.lpr"/>
-        <Caret Line="55" Column="21" TopLine="37"/>
+        <Caret Line="185" Column="40" TopLine="169"/>
       </Position17>
       <Position18>
         <Filename Value="ads3.lpr"/>
-        <Caret Line="73" Column="19" TopLine="58"/>
+        <Caret Line="187" Column="40" TopLine="171"/>
       </Position18>
       <Position19>
         <Filename Value="ads3.lpr"/>
-        <Caret Line="133" Column="11" TopLine="124"/>
+        <Caret Line="188" Column="40" TopLine="172"/>
       </Position19>
       <Position20>
         <Filename Value="ads3.lpr"/>
-        <Caret Line="171" Column="46" TopLine="162"/>
+        <Caret Line="193" Column="32" TopLine="177"/>
       </Position20>
       <Position21>
-        <Filename Value="unitas.pas"/>
-        <Caret Line="162" Column="11" TopLine="152"/>
+        <Filename Value="ads3.lpr"/>
+        <Caret Line="196" Column="32" TopLine="180"/>
       </Position21>
       <Position22>
         <Filename Value="ads3.lpr"/>
-        <Caret Line="141" Column="30" TopLine="176"/>
+        <Caret Line="199" Column="28" TopLine="183"/>
       </Position22>
       <Position23>
-        <Filename Value="ads3.lpr"/>
-        <Caret Line="174" Column="39" TopLine="162"/>
+        <Filename Value="vektorius.pas"/>
+        <Caret Line="171" Column="27" TopLine="94"/>
       </Position23>
       <Position24>
-        <Filename Value="ads3.lpr"/>
-        <Caret Line="219" Column="12" TopLine="96"/>
+        <Filename Value="vektorius.pas"/>
+        <Caret Line="1" Column="61" TopLine="1"/>
       </Position24>
       <Position25>
         <Filename Value="vektorius.pas"/>
-        <Caret Line="86" Column="27" TopLine="72"/>
+        <Caret Line="31" Column="36" TopLine="15"/>
       </Position25>
       <Position26>
         <Filename Value="vektorius.pas"/>
-        <Caret Line="33" Column="11" TopLine="23"/>
+        <Caret Line="35" Column="45" TopLine="59"/>
       </Position26>
       <Position27>
         <Filename Value="vektorius.pas"/>
-        <Caret Line="46" Column="11" TopLine="195"/>
+        <Caret Line="127" Column="5" TopLine="127"/>
       </Position27>
       <Position28>
         <Filename Value="vektorius.pas"/>
-        <Caret Line="61" Column="11" TopLine="60"/>
+        <Caret Line="61" Column="46" TopLine="60"/>
       </Position28>
       <Position29>
-        <Filename Value="vektorius.pas"/>
-        <Caret Line="122" Column="11" TopLine="118"/>
+        <Filename Value="ads3.lpr"/>
+        <Caret Line="224" Column="20" TopLine="208"/>
       </Position29>
       <Position30>
-        <Filename Value="vektorius.pas"/>
-        <Caret Line="107" Column="11" TopLine="89"/>
+        <Filename Value="ads3.lpr"/>
+        <Caret Line="6" Column="5" TopLine="70"/>
       </Position30>
     </JumpHistory>
   </ProjectSession>

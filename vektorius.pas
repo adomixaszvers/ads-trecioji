@@ -140,6 +140,8 @@ begin
       E := E^.kitas;
     tarpinis := E^.kitas;
     E^.kitas := tarpinis^.kitas;
+    if tarpinis = v.elem then
+       v.elem := e;
     dispose(tarpinis);
     Dec(v.VDydis);
   end;

@@ -108,15 +108,13 @@ type
     i := 1;
     j := 0;
     for i := 1 to v.VDydis do
-    begin
-      if VElem(v, i-j) <= 1 then
-      begin
-        VNaikElem(v, i-j);
-        inc(j);
-      end
-      else
-          VKeisk(v, i-j, VElem(v, i-j));
-    end;
+        VKeisk(v, i, VElem(v, i)-1);
+    i := 1;
+    while i <= v.VDydis do
+          if VElem(v, i) = 0 then
+             VNaikElem(v, i)
+          else
+            inc(i);
   end;
 
   procedure MKopijuok(v: vect; var m: TMedis);

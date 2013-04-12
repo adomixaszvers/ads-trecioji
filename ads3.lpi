@@ -33,7 +33,7 @@
         <LaunchingApplication PathPlusParams="/usr/bin/xterm -T 'Lazarus Run Output' -e $(LazarusDir)/tools/runwait.sh $(TargetCmdLine)"/>
       </local>
     </RunParams>
-    <Units Count="5">
+    <Units Count="3">
       <Unit0>
         <Filename Value="ads3.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -49,16 +49,6 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="DuomenuTipas"/>
       </Unit2>
-      <Unit3>
-        <Filename Value="duom_type.pas"/>
-        <IsPartOfProject Value="True"/>
-        <UnitName Value="duom_type"/>
-      </Unit3>
-      <Unit4>
-        <Filename Value="unitas.pas"/>
-        <IsPartOfProject Value="True"/>
-        <UnitName Value="unitas"/>
-      </Unit4>
     </Units>
   </ProjectOptions>
   <CompilerOptions>

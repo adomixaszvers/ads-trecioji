@@ -4,10 +4,10 @@ program ads3;
 
 uses
   heaptrc,
-  unitas,
   vektorius,
   DuomenuTipas,
-  duom_type;
+  Tipai,
+  ProcNFunc;
 
 const
   DarboLaikas = 200;
@@ -92,6 +92,24 @@ type
     indeksas := i;
   end;
 
+  procedure Rask(m: TreeType; key: KeyType; var indeksas: longint);
+  var
+    elem: TreePtrType;
+  begin
+      indeksas := 0;
+      elem := m;
+      while elem <> nil do
+      begin
+        inc(indeksas);
+        if elem^.info.key = key then
+           break;
+        if elem^.info.key > key then
+           elem := elem^.Left
+        else
+          elem:=elem^.Right;
+      end;
+  end;
+
   procedure VKopijuok(saltinis: vect; var tikslas: vect);
   var
     i: longint;
@@ -122,15 +140,18 @@ type
         Inc(i);
   end;
 
-  procedure MKopijuok(v: vect; var m: TMedis);
+  procedure MKopijuok(v: vect; var m: TreeType);
   var
     i: longint;
     klaida: boolean;
+    tmp: TreeElementType;
   begin
-    Naikinti_Medi(m);
-    Kurti(m, klaida);
+    CreateTree(m);
     for i := 1 to v.VDydis do
-      Iterpimas_Medis(VElem(v, i), m, klaida);
+    begin
+      tmp.key:=VElem(v, i);
+      InsertElement(m, tmp);
+    end;
   end;
 
   function Ivykis(tikimybe: shortint): boolean;
@@ -145,7 +166,7 @@ type
     per_kiek: longint;
     per_kiek_small: smallint;
     ieskoma: duomenu_tipas;
-    knygos_m: TMedis;
+    knygos_m: TreeType;
     knygos_n, knygos_r, darb_n, darb_r, darb_m: vect;
     klaida: boolean;
   begin
@@ -156,7 +177,6 @@ type
     VKopijuok(v, knygos_r);
     SurusiuotiVek(knygos_r);
     MKopijuok(v, knygos_m);
-    Balansavimas(knygos_m, klaida);
     VKurk(darb_n);
     VKurk(darb_r);
     VKurk(darb_m);
@@ -175,9 +195,9 @@ type
           VNaikElem(knygos_r, per_kiek);
           VPrid(darb_r, per_kiek);
 
-          RASK_EL(ieskoma, knygos_m, per_kiek_small, klaida);
-          Naikinti_el(knygos_m, ieskoma, klaida);
-          VPrid(darb_m, per_kiek_small);
+          Rask(knygos_m, ieskoma, per_kiek);
+          DeleteElement(knygos_m, ieskoma);
+          VPrid(darb_m, per_kiek);
 
           if max_darb_n < darb_n.VDydis then
             max_darb_n := darb_n.VDydis;
@@ -202,7 +222,7 @@ type
     end;
     VNaik(knygos_n);
     VNaik(knygos_r);
-    Naikinti_Medi(knygos_m);
+    DestroyTree(knygos_m);
     VNaik(darb_n);
     VNaik(darb_r);
     VNaik(darb_m);

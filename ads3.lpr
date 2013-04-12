@@ -95,7 +95,7 @@ type
   var
     i: longint;
   begin
-    VNaik(tikslas);
+    //VNaik(tikslas);
     VKurk(tikslas);
     for i := 1 to saltinis.VDydis do
       VPrid(tikslas, VElem(saltinis, i));
@@ -103,19 +103,19 @@ type
 
   procedure VMazinkVienetu(var v: vect);
   var
-    i: longint;
+    i, j: longint;
   begin
     i := 1;
-    while i <= v.VDydis do
+    j := 0;
+    for i := 1 to v.VDydis do
     begin
-      if VElem(v, i) <= 1 then
+      if VElem(v, i-j) <= 1 then
       begin
-        while VElem(v, i) <= 1 do
-          VNaikElem(v, i);
+        VNaikElem(v, i-j);
+        inc(j);
       end
       else
-        VKeisk(v, i, VElem(v, i) - 1);
-      Inc(i);
+          VKeisk(v, i-j, VElem(v, i-j));
     end;
   end;
 
@@ -198,11 +198,9 @@ var
 begin
   if ParamSkaitymas('param.txt', skait_at_tik, ar_yra_knyga, v) = 0 then
   begin
-    VRasyk(v);
-    WriteLn;
-    SurusiuotiVek(v);
-    VRasyk(v);
-    WriteLn;
-    VNaik(v);
+    DarboDiena(skait_at_tik, ar_yra_knyga, v, max_darb_n, max_darb_r, max_darb_m);
+    WriteLn(max_darb_n);
+    WriteLn(max_darb_r);
+    WriteLn(max_darb_m);
   end;
 end.

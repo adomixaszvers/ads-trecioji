@@ -84,13 +84,12 @@ end;
 procedure VNaik(var v:vect);
   var tarpinis:vektor;
 begin
-  while v.pradzia^.kitas<>nil do
+  while v.pradzia<>nil do
    begin
     tarpinis:=v.pradzia;
     v.pradzia:=v.pradzia^.kitas;
     dispose(tarpinis);
    end;
-  dispose(v.pradzia);
   v.VDydis:=0;
 end;
 

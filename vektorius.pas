@@ -32,9 +32,9 @@ implementation
 
 procedure VKurk(var v:vect);
 begin
-  new(v.elem);
-  v.pradzia:=v.elem;
-  v.pradzia^.kitas:=nil;
+  //new(v.elem);
+  v.elem:=nil;
+  v.pradzia:=nil;
   v.VDydis:=0;
 end;
 
@@ -47,6 +47,8 @@ procedure VPrid(var v:vect; Duom:duomenu_tipas);
 begin
   If v.VDydis=0
    then begin
+                      new(v.elem);
+   v.pradzia:=v.elem;
          v.Elem^.Duomenys:=Duom;
          v.Elem^.kitas:=nil;
          inc(v.VDydis);
@@ -168,4 +170,4 @@ begin
                   else VArSukurtas:=True;
 end;
 
-end.
+end.

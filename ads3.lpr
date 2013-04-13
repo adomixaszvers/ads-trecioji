@@ -143,16 +143,40 @@ type
     klaida: boolean;
   begin
     if RaskAuksti(m) = 0 then
-       TrinkM(m);
+      TrinkM(m);
     for i := 1 to v.VDydis do
     begin
-       PridekE(m, VElem(v, i));
+      PridekE(m, VElem(v, i));
     end;
   end;
 
   function Ivykis(tikimybe: shortint): boolean;
   begin
     Ivykis := Random(101) >= tikimybe;
+  end;
+
+  procedure BeDublikatu(var v: vect);
+  var
+    m: TPElementas;
+
+    procedure RekursiskaiPridek(elem: TPElementas);
+    begin
+      if elem = nil then
+        exit;
+      VPrid(v, elem^.reiksme);
+      RekursiskaiPridek(elem^.ka);
+      RekursiskaiPridek(elem^.de);
+    end;
+
+  begin
+    m := nil;
+    while v.VDydis > 0 do
+    begin
+      PridekE(m, VElem(v, v.VDydis));
+      VNaikElem(v, v.VDydis);
+    end;
+    RekursiskaiPridek(m);
+    TrinkM(m);
   end;
 
   procedure DarboDiena(skait_at_tik, ar_yra_knyga: shortint; v: vect;
@@ -174,6 +198,7 @@ type
     SurusiuotiVek(knygos_r);
     knygos_m := nil; //tuscias medis
     MKopijuok(v, knygos_m);
+    DSWBalansavimas(knygos_m);
     VKurk(darb_n);
     VKurk(darb_r);
     VKurk(darb_m);
@@ -234,6 +259,7 @@ begin
   if ParamSkaitymas('param.txt', skait_at_tik, ar_yra_knyga, v) = 0 then
   begin
     Randomize;
+    BeDublikatu(v);
     DarboDiena(skait_at_tik, ar_yra_knyga, v, max_darb_n, max_darb_r, max_darb_m);
     WriteLn(max_darb_n);
     WriteLn(max_darb_r);

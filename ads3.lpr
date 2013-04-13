@@ -6,11 +6,11 @@ uses
   heaptrc,
   vektorius,
   DuomenuTipas,
-  Tipai,
-  ProcNFunc;
+  reiksme,
+  dvejetainispaieskosmedis;
 
 const
-  DarboLaikas = 200;
+  DarboLaikas = 20000;
 
 type
   dtP = ^duomenu_tipas;
@@ -92,22 +92,22 @@ type
     indeksas := i;
   end;
 
-  procedure Rask(m: TreeType; key: KeyType; var indeksas: longint);
+  procedure Rask(m: TPElementas; key: TReiksme; var indeksas: longint);
   var
-    elem: TreePtrType;
+    elem: TPElementas;
   begin
-      indeksas := 0;
-      elem := m;
-      while elem <> nil do
-      begin
-        inc(indeksas);
-        if elem^.info.key = key then
-           break;
-        if elem^.info.key > key then
-           elem := elem^.Left
-        else
-          elem:=elem^.Right;
-      end;
+    indeksas := 0;
+    elem := m;
+    while elem <> nil do
+    begin
+      Inc(indeksas);
+      if elem^.reiksme = key then
+        break;
+      if elem^.reiksme > key then
+        elem := elem^.ka
+      else
+        elem := elem^.de;
+    end;
   end;
 
   procedure VKopijuok(saltinis: vect; var tikslas: vect);
@@ -137,17 +137,16 @@ type
         Inc(i);
   end;
 
-  procedure MKopijuok(v: vect; var m: TreeType);
+  procedure MKopijuok(v: vect; var m: TPElementas);
   var
     i: longint;
     klaida: boolean;
-    tmp: TreeElementType;
   begin
-    CreateTree(m);
+    if RaskAuksti(m) = 0 then
+       TrinkM(m);
     for i := 1 to v.VDydis do
     begin
-      tmp.key:=VElem(v, i);
-      InsertElement(m, tmp);
+       PridekE(m, VElem(v, i));
     end;
   end;
 
@@ -163,7 +162,7 @@ type
     per_kiek: longint;
     per_kiek_small: smallint;
     ieskoma: duomenu_tipas;
-    knygos_m: TreeType;
+    knygos_m: TPElementas;
     knygos_n, knygos_r, darb_n, darb_r, darb_m: vect;
     klaida: boolean;
   begin
@@ -173,6 +172,7 @@ type
     VKopijuok(v, knygos_n);
     VKopijuok(v, knygos_r);
     SurusiuotiVek(knygos_r);
+    knygos_m := nil; //tuscias medis
     MKopijuok(v, knygos_m);
     VKurk(darb_n);
     VKurk(darb_r);
@@ -186,14 +186,14 @@ type
           per_kiek := Random(knygos_n.VDydis) + 1;
           VPrid(darb_n, per_kiek);
           ieskoma := VElem(knygos_n, per_kiek);
-          VNaikElem(knygos_n, per_kiek);
+          //VNaikElem(knygos_n, per_kiek);
 
           Rask(knygos_r, ieskoma, klaida, per_kiek);
-          VNaikElem(knygos_r, per_kiek);
+          //VNaikElem(knygos_r, per_kiek);
           VPrid(darb_r, per_kiek);
 
           Rask(knygos_m, ieskoma, per_kiek);
-          DeleteElement(knygos_m, ieskoma);
+          //DeleteElement(knygos_m, ieskoma);
           VPrid(darb_m, per_kiek);
 
           if max_darb_n < darb_n.VDydis then
@@ -208,18 +208,18 @@ type
       end;
       WriteLn('Ciklas ', dabartinis_laikas);
       VRasyk(darb_n);
-      WriteLn(':',darb_n.VDydis);
+      WriteLn(':', darb_n.VDydis);
       VMazinkVienetu(darb_n);
       VRasyk(darb_r);
-      WriteLn(':',darb_r.VDydis);
+      WriteLn(':', darb_r.VDydis);
       VMazinkVienetu(darb_r);
       VRasyk(darb_m);
-      WriteLn(':',darb_m.VDydis);
+      WriteLn(':', darb_m.VDydis);
       VMazinkVienetu(darb_m);
     end;
     VNaik(knygos_n);
     VNaik(knygos_r);
-    DestroyTree(knygos_m);
+    TrinkM(knygos_m);
     VNaik(darb_n);
     VNaik(darb_r);
     VNaik(darb_m);

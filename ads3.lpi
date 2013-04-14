@@ -70,9 +70,12 @@
       <IncludeFiles Value="$(ProjOutDir)"/>
       <UnitOutputDirectory Value="lib/$(TargetCPU)-$(TargetOS)"/>
     </SearchPaths>
-    <Parsing>
-      <Style Value="1"/>
-    </Parsing>
+    <CodeGeneration>
+      <TargetOS Value="linux"/>
+      <Optimizations>
+        <OptimizationLevel Value="3"/>
+      </Optimizations>
+    </CodeGeneration>
     <Linking>
       <Debugging>
         <UseValgrind Value="True"/>

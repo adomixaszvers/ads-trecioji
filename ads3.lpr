@@ -270,6 +270,7 @@ const
     v: vect;
 
   begin
+    Randomize;
     if ParamSkaitymas('param.txt', skait_at_tik, ar_yra_knyga, v) = 0 then
     begin
       BeDublikatu(v);
@@ -292,7 +293,7 @@ var
   suma_darb_n, suma_darb_r, suma_darb_m: longint;
   i: longint;
 begin
-  Randomize;
+  //Randomize;
   suma_darb_n := 0;
   suma_darb_r := 0;
   suma_darb_m := 0;

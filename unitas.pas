@@ -96,10 +96,10 @@ begin
     end
     else
     begin
-      New(temp);
+      {New(temp);
       temp^.kaire := nil;
       temp^.desine := nil;
-      temp^.duom := duomenys;
+      temp^.duom := duomenys;}
 
       if Medis^.duom >
         duomenys   //jei naujas duomenys maziau uz pirma, tai i kaire
@@ -107,11 +107,18 @@ begin
         if Medis^.kaire =
           nil  //jei ta kaire tuscia -> priskirt reiksme, sukurti toliau
         then
-          Medis^.kaire := temp //duodam pag. medziui
+        begin
+          New(temp);
+          temp^.kaire := nil;
+          temp^.desine := nil;
+          temp^.duom := duomenys;
+          Medis^.kaire := temp; //duodam pag. medziui
+        end
 
         else
         begin //jei uzimta kaire puse, pereinam i kita ir kuriam
           Medis := Medis^.kaire;
+          //Dispose(temp);
           Iterpk(duomenys, Medis, klaida);
         end
 
@@ -120,11 +127,18 @@ begin
       then
         if Medis^.desine = nil     //jei tuscia, idedam
         then
-          Medis^.desine := temp
+        begin
+          New(temp);
+          temp^.kaire := nil;
+          temp^.desine := nil;
+          temp^.duom := duomenys;
+          Medis^.desine := temp;
+        end
 
         else
         begin  //jei uzimta, judam toliau, kuriam
           Medis := Medis^.desine;
+          //Dispose(temp);
           Iterpk(duomenys, Medis, klaida);
         end;
     end;
@@ -422,4 +436,4 @@ begin
 end;
 
 begin
-end.
+end.

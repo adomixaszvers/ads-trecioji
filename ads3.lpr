@@ -3,14 +3,14 @@ program ads3;
 
 
 uses
-  //heaptrc,
-  unitas,
+  heaptrc,
   vektorius,
   DuomenuTipas,
-  duom_type;
+  duom_type,
+  unitas;
 
 const
-  DarboLaikas = 200;
+  DarboLaikas = 20000;
 
 type
   dtP = ^duomenu_tipas;
@@ -92,6 +92,24 @@ type
     indeksas := i;
   end;
 
+  procedure Rask(m: TMedis; key: duomenu_tipas; var indeksas: longint);
+  var
+    elem: T_Lapas;
+  begin
+    indeksas := 0;
+    elem := m.galva;
+    while elem <> nil do
+    begin
+      Inc(indeksas);
+      if elem^.duom = key then
+        break;
+      if elem^.duom > key then
+        elem := elem^.kaire
+      else
+        elem := elem^.desine;
+    end;
+  end;
+
   procedure VKopijuok(saltinis: vect; var tikslas: vect);
   var
     i: longint;
@@ -110,10 +128,7 @@ type
     i := 1;
     j := 0;
     for i := 1 to v.VDydis do
-    begin
-      temp := VElem(v, i);
-      VKeisk(v, i, temp - 1);
-    end;
+      VKeisk(v, i, VElem(v, i) - 1);
     i := 1;
     while i <= v.VDydis do
       if VElem(v, i) = 0 then
@@ -127,15 +142,46 @@ type
     i: longint;
     klaida: boolean;
   begin
-    Naikinti_Medi(m);
+    {if RaskAuksti(m) = 0 then
+      TrinkM(m);}
+    m.sukurtas:=False;
     Kurti(m, klaida);
     for i := 1 to v.VDydis do
+    begin
       Iterpimas_Medis(VElem(v, i), m, klaida);
+    end;
   end;
 
   function Ivykis(tikimybe: shortint): boolean;
   begin
     Ivykis := Random(101) >= tikimybe;
+  end;
+
+  procedure BeDublikatu(var v: vect);
+  var
+    m: TMedis;
+    klaida: boolean;
+
+    procedure RekursiskaiPridek(elem: T_Lapas);
+    begin
+      if elem = nil then
+        exit;
+      VPrid(v, elem^.duom);
+      RekursiskaiPridek(elem^.kaire);
+      RekursiskaiPridek(elem^.desine);
+    end;
+
+  begin
+    m.sukurtas:=False;
+
+    Kurti(m, klaida);
+    while v.VDydis > 0 do
+    begin
+      Iterpimas_Medis(VElem(v, v.VDydis), m, klaida);
+      VNaikElem(v, v.VDydis);
+    end;
+    RekursiskaiPridek(m.galva);
+    Naikinti_Medi(m);
   end;
 
   procedure DarboDiena(skait_at_tik, ar_yra_knyga: shortint; v: vect;
@@ -156,7 +202,7 @@ type
     VKopijuok(v, knygos_r);
     SurusiuotiVek(knygos_r);
     MKopijuok(v, knygos_m);
-    Balansavimas(knygos_m, klaida);
+    //Balansavimas(knygos_m, klaida);
     VKurk(darb_n);
     VKurk(darb_r);
     VKurk(darb_m);
@@ -169,15 +215,15 @@ type
           per_kiek := Random(knygos_n.VDydis) + 1;
           VPrid(darb_n, per_kiek);
           ieskoma := VElem(knygos_n, per_kiek);
-          VNaikElem(knygos_n, per_kiek);
+          //VNaikElem(knygos_n, per_kiek);
 
           Rask(knygos_r, ieskoma, klaida, per_kiek);
-          VNaikElem(knygos_r, per_kiek);
+          //VNaikElem(knygos_r, per_kiek);
           VPrid(darb_r, per_kiek);
 
-          RASK_EL(ieskoma, knygos_m, per_kiek_small, klaida);
-          Naikinti_el(knygos_m, ieskoma, klaida);
-          VPrid(darb_m, per_kiek_small);
+          Rask(knygos_m, ieskoma, per_kiek);
+          //DeleteElement(knygos_m, ieskoma);
+          VPrid(darb_m, per_kiek);
 
           if max_darb_n < darb_n.VDydis then
             max_darb_n := darb_n.VDydis;
@@ -191,13 +237,13 @@ type
       end;
       WriteLn('Ciklas ', dabartinis_laikas);
       VRasyk(darb_n);
-      WriteLn(':',darb_n.VDydis);
+      WriteLn(':', darb_n.VDydis);
       VMazinkVienetu(darb_n);
       VRasyk(darb_r);
-      WriteLn(':',darb_r.VDydis);
+      WriteLn(':', darb_r.VDydis);
       VMazinkVienetu(darb_r);
       VRasyk(darb_m);
-      WriteLn(':',darb_m.VDydis);
+      WriteLn(':', darb_m.VDydis);
       VMazinkVienetu(darb_m);
     end;
     VNaik(knygos_n);
@@ -217,6 +263,7 @@ begin
   if ParamSkaitymas('param.txt', skait_at_tik, ar_yra_knyga, v) = 0 then
   begin
     Randomize;
+    BeDublikatu(v);
     DarboDiena(skait_at_tik, ar_yra_knyga, v, max_darb_n, max_darb_r, max_darb_m);
     WriteLn(max_darb_n);
     WriteLn(max_darb_r);
@@ -227,7 +274,6 @@ begin
       VRasyk(v);
       WriteLn;
       VMazinkVienetu(v);
-    end;
     VRasyk(v); WriteLn;}
   end;
 end.

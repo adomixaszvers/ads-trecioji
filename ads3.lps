@@ -8,11 +8,15 @@
         <Filename Value="ads3.lpr"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="ads3"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="0"/>
         <WindowIndex Value="0"/>
+<<<<<<< HEAD
         <TopLine Value="187"/>
         <CursorPos X="33" Y="199"/>
+=======
+        <TopLine Value="186"/>
+        <CursorPos X="7" Y="205"/>
+>>>>>>> 7df36ce... Pataisiau Daliaus medį. Neleak'ina
         <UsageCount Value="38"/>
         <Loaded Value="True"/>
       </Unit0>
@@ -22,8 +26,13 @@
         <UnitName Value="vektorius"/>
         <EditorIndex Value="4"/>
         <WindowIndex Value="0"/>
+<<<<<<< HEAD
         <TopLine Value="1"/>
         <CursorPos X="33" Y="137"/>
+=======
+        <TopLine Value="130"/>
+        <CursorPos X="20" Y="144"/>
+>>>>>>> 7df36ce... Pataisiau Daliaus medį. Neleak'ina
         <UsageCount Value="38"/>
         <Loaded Value="True"/>
       </Unit1>
@@ -36,15 +45,29 @@
       <Unit3>
         <Filename Value="duom_type.pas"/>
         <UnitName Value="duom_type"/>
+<<<<<<< HEAD
         <UsageCount Value="37"/>
+=======
+        <UsageCount Value="38"/>
+>>>>>>> 7df36ce... Pataisiau Daliaus medį. Neleak'ina
       </Unit3>
       <Unit4>
         <Filename Value="unitas.pas"/>
         <UnitName Value="unitas"/>
+<<<<<<< HEAD
         <WindowIndex Value="0"/>
         <TopLine Value="301"/>
         <CursorPos X="11" Y="162"/>
         <UsageCount Value="37"/>
+=======
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="1"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="123"/>
+        <CursorPos X="34" Y="134"/>
+        <UsageCount Value="38"/>
+        <Loaded Value="True"/>
+>>>>>>> 7df36ce... Pataisiau Daliaus medį. Neleak'ina
       </Unit4>
       <Unit5>
         <Filename Value="../medis2/sumenu.pas"/>
@@ -90,6 +113,7 @@
     </General>
     <JumpHistory Count="30" HistoryIndex="29">
       <Position1>
+<<<<<<< HEAD
         <Filename Value="vektorius.pas"/>
         <Caret Line="31" Column="36" TopLine="15"/>
       </Position1>
@@ -208,6 +232,126 @@
       <Position30>
         <Filename Value="ads3.lpr"/>
         <Caret Line="200" Column="33" TopLine="207"/>
+=======
+        <Filename Value="ads3.lpr"/>
+        <Caret Line="146" Column="18" TopLine="135"/>
+      </Position1>
+      <Position2>
+        <Filename Value="ads3.lpr"/>
+        <Caret Line="149" Column="45" TopLine="139"/>
+      </Position2>
+      <Position3>
+        <Filename Value="ads3.lpr"/>
+        <Caret Line="160" Column="14" TopLine="150"/>
+      </Position3>
+      <Position4>
+        <Filename Value="ads3.lpr"/>
+        <Caret Line="166" Column="21" TopLine="152"/>
+      </Position4>
+      <Position5>
+        <Filename Value="ads3.lpr"/>
+        <Caret Line="179" Column="18" TopLine="163"/>
+      </Position5>
+      <Position6>
+        <Filename Value="ads3.lpr"/>
+        <Caret Line="172" Column="11" TopLine="158"/>
+      </Position6>
+      <Position7>
+        <Filename Value="ads3.lpr"/>
+        <Caret Line="161" Column="21" TopLine="153"/>
+      </Position7>
+      <Position8>
+        <Filename Value="ads3.lpr"/>
+        <Caret Line="179" Column="30" TopLine="166"/>
+      </Position8>
+      <Position9>
+        <Filename Value="ads3.lpr"/>
+        <Caret Line="199" Column="29" TopLine="190"/>
+      </Position9>
+      <Position10>
+        <Filename Value="ads3.lpr"/>
+        <Caret Line="200" Column="28" TopLine="191"/>
+      </Position10>
+      <Position11>
+        <Filename Value="ads3.lpr"/>
+        <Caret Line="219" Column="60" TopLine="209"/>
+      </Position11>
+      <Position12>
+        <Filename Value="ads3.lpr"/>
+        <Caret Line="246" Column="18" TopLine="236"/>
+      </Position12>
+      <Position13>
+        <Filename Value="ads3.lpr"/>
+        <Caret Line="173" Column="12" TopLine="161"/>
+      </Position13>
+      <Position14>
+        <Filename Value="unitas.pas"/>
+        <Caret Line="162" Column="11" TopLine="76"/>
+      </Position14>
+      <Position15>
+        <Filename Value="ads3.lpr"/>
+        <Caret Line="173" Column="10" TopLine="160"/>
+      </Position15>
+      <Position16>
+        <Filename Value="ads3.lpr"/>
+        <Caret Line="147" Column="22" TopLine="258"/>
+      </Position16>
+      <Position17>
+        <Filename Value="unitas.pas"/>
+        <Caret Line="55" Column="11" TopLine="72"/>
+      </Position17>
+      <Position18>
+        <Filename Value="unitas.pas"/>
+        <Caret Line="416" Column="11" TopLine="405"/>
+      </Position18>
+      <Position19>
+        <Filename Value="unitas.pas"/>
+        <Caret Line="382" Column="11" TopLine="381"/>
+      </Position19>
+      <Position20>
+        <Filename Value="unitas.pas"/>
+        <Caret Line="76" Column="11" TopLine="66"/>
+      </Position20>
+      <Position21>
+        <Filename Value="unitas.pas"/>
+        <Caret Line="318" Column="11" TopLine="308"/>
+      </Position21>
+      <Position22>
+        <Filename Value="unitas.pas"/>
+        <Caret Line="135" Column="11" TopLine="128"/>
+      </Position22>
+      <Position23>
+        <Filename Value="unitas.pas"/>
+        <Caret Line="96" Column="87" TopLine="85"/>
+      </Position23>
+      <Position24>
+        <Filename Value="unitas.pas"/>
+        <Caret Line="306" Column="11" TopLine="295"/>
+      </Position24>
+      <Position25>
+        <Filename Value="unitas.pas"/>
+        <Caret Line="129" Column="25" TopLine="118"/>
+      </Position25>
+      <Position26>
+        <Filename Value="unitas.pas"/>
+        <Caret Line="195" Column="11" TopLine="196"/>
+      </Position26>
+      <Position27>
+        <Filename Value="ads3.lpr"/>
+        <Caret Line="111" Column="7" TopLine="90"/>
+      </Position27>
+      <Position28>
+        <Filename Value="ads3.lpr"/>
+        <Caret Line="100" Column="16" TopLine="85"/>
+      </Position28>
+      <Position29>
+        <Filename Value="unitas.pas"/>
+        <Caret Line="148" Column="11" TopLine="174"/>
+      </Position29>
+      <Position30>
+        <Filename Value="unitas.pas"/>
+        <Caret Line="135" Column="33" TopLine="122"/>
+>>>>>>> 7df36ce... Pataisiau Daliaus medį. Neleak'ina
       </Position30>
     </JumpHistory>
   </ProjectSession>

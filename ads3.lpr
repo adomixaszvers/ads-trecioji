@@ -10,7 +10,7 @@ uses
   unitas;
 
 const
-  DarboLaikas = 20000;
+  DarboLaikas = 1440;
 
 type
   dtP = ^duomenu_tipas;
@@ -283,5 +283,29 @@ var
     suma_darb_n, suma_darb_r, suma_darb_m: longint;
   i: longint;
 begin
-   suma
+   suma_darb_n:=0;
+   suma_darb_r:=0;
+   suma_darb_m:=0;
+   max_darb_n:=0;
+   max_darb_r:=0;
+   max_darb_m:=0;
+
+   for i := 1 to 10000 do
+   begin
+     WriteLn('Ciklas ', i);
+     Pagrindine(darb_n, darb_r, darb_m);
+     suma_darb_n:=suma_darb_n+darb_n;
+     suma_darb_r:=suma_darb_r+darb_r;
+     suma_darb_m:=suma_darb_m+darb_m;
+     if darb_n > max_darb_n then
+        max_darb_n:=darb_n;
+     if darb_r > max_darb_r then
+        max_darb_r:=darb_r;
+     if darb_m > max_darb_m then
+        max_darb_m:=darb_m;
+   end;
+   WriteLn('Maksimumai ir vidurkiai:');
+   WriteLn('Nesurusiuoto ', max_darb_n, ' ', (suma_darb_n/10000):2:3);
+   WriteLn('Surusiuota ', max_darb_r, ' ', (suma_darb_r/10000):2:3);
+   WriteLn('Medzio ', max_darb_m, ' ', (suma_darb_m/10000):2:3);
 end.

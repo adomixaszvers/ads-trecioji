@@ -3,16 +3,16 @@
   <ProjectSession>
     <Version Value="9"/>
     <BuildModes Active="Default"/>
-    <Units Count="6">
+    <Units Count="8">
       <Unit0>
         <Filename Value="ads3.lpr"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="ads3"/>
         <EditorIndex Value="0"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="186"/>
+        <TopLine Value="262"/>
         <CursorPos X="7" Y="205"/>
-        <UsageCount Value="38"/>
+        <UsageCount Value="39"/>
         <Loaded Value="True"/>
       </Unit0>
       <Unit1>
@@ -23,20 +23,20 @@
         <WindowIndex Value="0"/>
         <TopLine Value="130"/>
         <CursorPos X="20" Y="144"/>
-        <UsageCount Value="38"/>
+        <UsageCount Value="39"/>
         <Loaded Value="True"/>
       </Unit1>
       <Unit2>
         <Filename Value="DuomenuTipas.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="DuomenuTipas"/>
-        <UsageCount Value="38"/>
+        <UsageCount Value="39"/>
       </Unit2>
       <Unit3>
         <Filename Value="duom_type.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="duom_type"/>
-        <UsageCount Value="38"/>
+        <UsageCount Value="39"/>
       </Unit3>
       <Unit4>
         <Filename Value="unitas.pas"/>
@@ -45,9 +45,9 @@
         <IsVisibleTab Value="True"/>
         <EditorIndex Value="1"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="123"/>
+        <TopLine Value="120"/>
         <CursorPos X="34" Y="134"/>
-        <UsageCount Value="38"/>
+        <UsageCount Value="39"/>
         <Loaded Value="True"/>
       </Unit4>
       <Unit5>
@@ -58,11 +58,27 @@
         <CursorPos X="1" Y="1"/>
         <UsageCount Value="10"/>
       </Unit5>
+      <Unit6>
+        <Filename Value="../daliaus_medis/unitas.pas"/>
+        <UnitName Value="unitas"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="408"/>
+        <CursorPos X="1" Y="423"/>
+        <UsageCount Value="10"/>
+      </Unit6>
+      <Unit7>
+        <Filename Value="../vaido_vektorius/vektorius.pas"/>
+        <UnitName Value="vektorius"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="143"/>
+        <CursorPos X="25" Y="221"/>
+        <UsageCount Value="10"/>
+      </Unit7>
     </Units>
     <General>
       <ActiveWindowIndexAtStart Value="0"/>
     </General>
-    <JumpHistory Count="30" HistoryIndex="29">
+    <JumpHistory Count="26" HistoryIndex="25">
       <Position1>
         <Filename Value="ads3.lpr"/>
         <Caret Line="146" Column="18" TopLine="135"/>
@@ -124,65 +140,49 @@
         <Caret Line="173" Column="10" TopLine="160"/>
       </Position15>
       <Position16>
-        <Filename Value="ads3.lpr"/>
-        <Caret Line="147" Column="22" TopLine="258"/>
+        <Filename Value="unitas.pas"/>
+        <Caret Line="416" Column="11" TopLine="405"/>
       </Position16>
       <Position17>
         <Filename Value="unitas.pas"/>
-        <Caret Line="55" Column="11" TopLine="72"/>
+        <Caret Line="382" Column="11" TopLine="381"/>
       </Position17>
       <Position18>
         <Filename Value="unitas.pas"/>
-        <Caret Line="416" Column="11" TopLine="405"/>
+        <Caret Line="76" Column="11" TopLine="66"/>
       </Position18>
       <Position19>
         <Filename Value="unitas.pas"/>
-        <Caret Line="382" Column="11" TopLine="381"/>
+        <Caret Line="318" Column="11" TopLine="308"/>
       </Position19>
       <Position20>
         <Filename Value="unitas.pas"/>
-        <Caret Line="76" Column="11" TopLine="66"/>
+        <Caret Line="135" Column="11" TopLine="128"/>
       </Position20>
       <Position21>
         <Filename Value="unitas.pas"/>
-        <Caret Line="318" Column="11" TopLine="308"/>
+        <Caret Line="96" Column="87" TopLine="85"/>
       </Position21>
       <Position22>
         <Filename Value="unitas.pas"/>
-        <Caret Line="135" Column="11" TopLine="128"/>
+        <Caret Line="306" Column="11" TopLine="295"/>
       </Position22>
       <Position23>
         <Filename Value="unitas.pas"/>
-        <Caret Line="96" Column="87" TopLine="85"/>
+        <Caret Line="129" Column="25" TopLine="118"/>
       </Position23>
       <Position24>
-        <Filename Value="unitas.pas"/>
-        <Caret Line="306" Column="11" TopLine="295"/>
+        <Filename Value="ads3.lpr"/>
+        <Caret Line="111" Column="7" TopLine="90"/>
       </Position24>
       <Position25>
-        <Filename Value="unitas.pas"/>
-        <Caret Line="129" Column="25" TopLine="118"/>
+        <Filename Value="ads3.lpr"/>
+        <Caret Line="100" Column="16" TopLine="85"/>
       </Position25>
       <Position26>
         <Filename Value="unitas.pas"/>
-        <Caret Line="195" Column="11" TopLine="196"/>
-      </Position26>
-      <Position27>
-        <Filename Value="ads3.lpr"/>
-        <Caret Line="111" Column="7" TopLine="90"/>
-      </Position27>
-      <Position28>
-        <Filename Value="ads3.lpr"/>
-        <Caret Line="100" Column="16" TopLine="85"/>
-      </Position28>
-      <Position29>
-        <Filename Value="unitas.pas"/>
-        <Caret Line="148" Column="11" TopLine="174"/>
-      </Position29>
-      <Position30>
-        <Filename Value="unitas.pas"/>
         <Caret Line="135" Column="33" TopLine="122"/>
-      </Position30>
+      </Position26>
     </JumpHistory>
   </ProjectSession>
 </CONFIG>

@@ -235,15 +235,15 @@ type
             max_darb_m := darb_m.VDydis;
         end;
       end;
-      WriteLn('Ciklas ', dabartinis_laikas);
-      VRasyk(darb_n);
-      WriteLn(':', darb_n.VDydis);
+      //WriteLn('Ciklas ', dabartinis_laikas);
+      //VRasyk(darb_n);
+      //WriteLn(':', darb_n.VDydis);
       VMazinkVienetu(darb_n);
-      VRasyk(darb_r);
-      WriteLn(':', darb_r.VDydis);
+      //VRasyk(darb_r);
+      //WriteLn(':', darb_r.VDydis);
       VMazinkVienetu(darb_r);
-      VRasyk(darb_m);
-      WriteLn(':', darb_m.VDydis);
+      //VRasyk(darb_m);
+      //WriteLn(':', darb_m.VDydis);
       VMazinkVienetu(darb_m);
     end;
     VNaik(knygos_n);
@@ -253,11 +253,10 @@ type
     VNaik(darb_r);
     VNaik(darb_m);
   end;
-
+procedure Pagrindine(var max_darb_n, max_darb_r, max_darb_m: longint);
 var
   skait_at_tik, ar_yra_knyga: shortint;
   v: vect;
-  max_darb_n, max_darb_r, max_darb_m: longint;
 
 begin
   if ParamSkaitymas('param.txt', skait_at_tik, ar_yra_knyga, v) = 0 then
@@ -276,4 +275,13 @@ begin
       VMazinkVienetu(v);
     VRasyk(v); WriteLn;}
   end;
+end;
+
+var
+  darb_n, darb_r, darb_m,
+    max_darb_n, max_darb_r, max_darb_m,
+    suma_darb_n, suma_darb_r, suma_darb_m: longint;
+  i: longint;
+begin
+   suma
 end.

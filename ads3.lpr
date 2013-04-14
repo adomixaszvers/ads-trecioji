@@ -4,16 +4,16 @@ program ads3;
 
 uses
   heaptrc,
-  vektorius,
-  DuomenuTipas,
-  duom_type,
-  unitas;
+  vektorius, //Vaido
+  DuomenuTipas, //Vaido
+  duom_type, //Daliaus
+  unitas; //Daliaus
 
 const
-  DarboLaikas = 1440;
+  DarboLaikas = 1440; //Kiek laiko vienetu truks diena
 
-type
-  dtP = ^duomenu_tipas;
+{type
+  dtP = ^duomenu_tipas;}
 
   procedure SurusiuotiVek(v: vect);
   var
@@ -35,6 +35,7 @@ type
     end;
   end;
 
+  //funkcija, kuri nuskaito duomenu faila. grazina 0, jei viskas gerai
   function ParamSkaitymas(DFPav: string; var skait_at_tik, ar_yra_knyga: shortint;
   var v: vect): shortint;
   var
@@ -75,6 +76,7 @@ type
     Close(df);
   end;
 
+  //iesko vektoriuje elemento
   procedure Rask(v: vect; duom: duomenu_tipas; var arRado: boolean;
   var indeksas: longint);
   var
@@ -92,6 +94,7 @@ type
     indeksas := i;
   end;
 
+  //iesko medyje elemento
   procedure Rask(m: TMedis; key: duomenu_tipas; var indeksas: longint);
   var
     elem: T_Lapas;
@@ -110,6 +113,7 @@ type
     end;
   end;
 
+  //kopijuoja vektoriaus duomenis i nauja vektoriu
   procedure VKopijuok(saltinis: vect; var tikslas: vect);
   var
     i: longint;
@@ -120,6 +124,7 @@ type
       VPrid(tikslas, VElem(saltinis, i));
   end;
 
+  //visus vektoriaus elementus mazina vienetu. nulius pasalina
   procedure VMazinkVienetu(var v: vect);
   var
     i, j: longint;
@@ -137,6 +142,7 @@ type
         Inc(i);
   end;
 
+  //kopijuoja vektoriaus duomenis i nauja medi
   procedure MKopijuok(v: vect; var m: TMedis);
   var
     i: longint;
@@ -144,7 +150,7 @@ type
   begin
     {if RaskAuksti(m) = 0 then
       TrinkM(m);}
-    m.sukurtas:=False;
+    m.sukurtas := False;
     Kurti(m, klaida);
     for i := 1 to v.VDydis do
     begin
@@ -152,11 +158,13 @@ type
     end;
   end;
 
+  //funkcija, kuri grazina, ar palankus ivykis pagal tikimybe
   function Ivykis(tikimybe: shortint): boolean;
   begin
     Ivykis := Random(101) >= tikimybe;
   end;
 
+  //procedura, kuri is vektoriaus pasalina dublikatus
   procedure BeDublikatu(var v: vect);
   var
     m: TMedis;
@@ -172,7 +180,7 @@ type
     end;
 
   begin
-    m.sukurtas:=False;
+    m.sukurtas := False;
 
     Kurti(m, klaida);
     while v.VDydis > 0 do
@@ -184,6 +192,7 @@ type
     Naikinti_Medi(m);
   end;
 
+  //procedura, kuri modeliuoja uzduoties situacija
   procedure DarboDiena(skait_at_tik, ar_yra_knyga: shortint; v: vect;
   var max_darb_n, max_darb_r, max_darb_m: longint);
   var
@@ -253,59 +262,61 @@ type
     VNaik(darb_r);
     VNaik(darb_m);
   end;
-procedure Pagrindine(var max_darb_n, max_darb_r, max_darb_m: longint);
-var
-  skait_at_tik, ar_yra_knyga: shortint;
-  v: vect;
 
-begin
-  if ParamSkaitymas('param.txt', skait_at_tik, ar_yra_knyga, v) = 0 then
+  //buvo pagrindiniame begin end.
+  procedure Pagrindine(var max_darb_n, max_darb_r, max_darb_m: longint);
+  var
+    skait_at_tik, ar_yra_knyga: shortint;
+    v: vect;
+
   begin
-    Randomize;
-    BeDublikatu(v);
-    DarboDiena(skait_at_tik, ar_yra_knyga, v, max_darb_n, max_darb_r, max_darb_m);
-    WriteLn(max_darb_n);
-    WriteLn(max_darb_r);
-    WriteLn(max_darb_m);
-    VNaik(v);
+    if ParamSkaitymas('param.txt', skait_at_tik, ar_yra_knyga, v) = 0 then
+    begin
+      BeDublikatu(v);
+      DarboDiena(skait_at_tik, ar_yra_knyga, v, max_darb_n, max_darb_r, max_darb_m);
+      WriteLn(max_darb_n);
+      WriteLn(max_darb_r);
+      WriteLn(max_darb_m);
+      VNaik(v);
     {while v.VDydis > 0 do
     begin
       VRasyk(v);
       WriteLn;
       VMazinkVienetu(v);
     VRasyk(v); WriteLn;}
+    end;
   end;
-end;
 
 var
-  darb_n, darb_r, darb_m,
-    max_darb_n, max_darb_r, max_darb_m,
-    suma_darb_n, suma_darb_r, suma_darb_m: longint;
+  darb_n, darb_r, darb_m, max_darb_n, max_darb_r, max_darb_m,
+  suma_darb_n, suma_darb_r, suma_darb_m: longint;
   i: longint;
 begin
-   suma_darb_n:=0;
-   suma_darb_r:=0;
-   suma_darb_m:=0;
-   max_darb_n:=0;
-   max_darb_r:=0;
-   max_darb_m:=0;
+  Randomize;
+  suma_darb_n := 0;
+  suma_darb_r := 0;
+  suma_darb_m := 0;
+  max_darb_n := 0;
+  max_darb_r := 0;
+  max_darb_m := 0;
 
-   for i := 1 to 10000 do
-   begin
-     WriteLn('Ciklas ', i);
-     Pagrindine(darb_n, darb_r, darb_m);
-     suma_darb_n:=suma_darb_n+darb_n;
-     suma_darb_r:=suma_darb_r+darb_r;
-     suma_darb_m:=suma_darb_m+darb_m;
-     if darb_n > max_darb_n then
-        max_darb_n:=darb_n;
-     if darb_r > max_darb_r then
-        max_darb_r:=darb_r;
-     if darb_m > max_darb_m then
-        max_darb_m:=darb_m;
-   end;
-   WriteLn('Maksimumai ir vidurkiai:');
-   WriteLn('Nesurusiuoto ', max_darb_n, ' ', (suma_darb_n/10000):2:3);
-   WriteLn('Surusiuota ', max_darb_r, ' ', (suma_darb_r/10000):2:3);
-   WriteLn('Medzio ', max_darb_m, ' ', (suma_darb_m/10000):2:3);
+  for i := 1 to 10000 do
+  begin
+    WriteLn('Ciklas ', i);
+    Pagrindine(darb_n, darb_r, darb_m);
+    suma_darb_n := suma_darb_n + darb_n;
+    suma_darb_r := suma_darb_r + darb_r;
+    suma_darb_m := suma_darb_m + darb_m;
+    if darb_n > max_darb_n then
+      max_darb_n := darb_n;
+    if darb_r > max_darb_r then
+      max_darb_r := darb_r;
+    if darb_m > max_darb_m then
+      max_darb_m := darb_m;
+  end;
+  WriteLn('Maksimumai ir vidurkiai:');
+  WriteLn('Nesurusiuoto ', max_darb_n, ' ', (suma_darb_n / 10000): 2: 3);
+  WriteLn('Surusiuota ', max_darb_r, ' ', (suma_darb_r / 10000): 2: 3);
+  WriteLn('Medzio ', max_darb_m, ' ', (suma_darb_m / 10000): 2: 3);
+
 end.

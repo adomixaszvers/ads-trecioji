@@ -11,9 +11,9 @@
         <IsVisibleTab Value="True"/>
         <EditorIndex Value="0"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="1"/>
-        <CursorPos X="21" Y="13"/>
-        <UsageCount Value="40"/>
+        <TopLine Value="300"/>
+        <CursorPos X="1" Y="321"/>
+        <UsageCount Value="41"/>
         <Loaded Value="True"/>
       </Unit0>
       <Unit1>
@@ -22,22 +22,22 @@
         <UnitName Value="vektorius"/>
         <EditorIndex Value="2"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="130"/>
+        <TopLine Value="1"/>
         <CursorPos X="20" Y="144"/>
-        <UsageCount Value="40"/>
+        <UsageCount Value="41"/>
         <Loaded Value="True"/>
       </Unit1>
       <Unit2>
         <Filename Value="DuomenuTipas.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="DuomenuTipas"/>
-        <UsageCount Value="40"/>
+        <UsageCount Value="41"/>
       </Unit2>
       <Unit3>
         <Filename Value="duom_type.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="duom_type"/>
-        <UsageCount Value="40"/>
+        <UsageCount Value="41"/>
       </Unit3>
       <Unit4>
         <Filename Value="unitas.pas"/>
@@ -45,9 +45,9 @@
         <UnitName Value="unitas"/>
         <EditorIndex Value="1"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="1"/>
+        <TopLine Value="407"/>
         <CursorPos X="34" Y="134"/>
-        <UsageCount Value="40"/>
+        <UsageCount Value="41"/>
         <Loaded Value="True"/>
       </Unit4>
       <Unit5>

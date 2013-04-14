@@ -3,20 +3,15 @@
   <ProjectSession>
     <Version Value="9"/>
     <BuildModes Active="Default"/>
-    <Units Count="9">
+    <Units Count="6">
       <Unit0>
         <Filename Value="ads3.lpr"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="ads3"/>
         <EditorIndex Value="0"/>
         <WindowIndex Value="0"/>
-<<<<<<< HEAD
-        <TopLine Value="187"/>
-        <CursorPos X="33" Y="199"/>
-=======
         <TopLine Value="186"/>
         <CursorPos X="7" Y="205"/>
->>>>>>> 7df36ce... Pataisiau Daliaus medį. Neleak'ina
         <UsageCount Value="38"/>
         <Loaded Value="True"/>
       </Unit0>
@@ -24,15 +19,10 @@
         <Filename Value="vektorius.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="vektorius"/>
-        <EditorIndex Value="4"/>
+        <EditorIndex Value="2"/>
         <WindowIndex Value="0"/>
-<<<<<<< HEAD
-        <TopLine Value="1"/>
-        <CursorPos X="33" Y="137"/>
-=======
         <TopLine Value="130"/>
         <CursorPos X="20" Y="144"/>
->>>>>>> 7df36ce... Pataisiau Daliaus medį. Neleak'ina
         <UsageCount Value="38"/>
         <Loaded Value="True"/>
       </Unit1>
@@ -44,22 +34,14 @@
       </Unit2>
       <Unit3>
         <Filename Value="duom_type.pas"/>
+        <IsPartOfProject Value="True"/>
         <UnitName Value="duom_type"/>
-<<<<<<< HEAD
-        <UsageCount Value="37"/>
-=======
         <UsageCount Value="38"/>
->>>>>>> 7df36ce... Pataisiau Daliaus medį. Neleak'ina
       </Unit3>
       <Unit4>
         <Filename Value="unitas.pas"/>
+        <IsPartOfProject Value="True"/>
         <UnitName Value="unitas"/>
-<<<<<<< HEAD
-        <WindowIndex Value="0"/>
-        <TopLine Value="301"/>
-        <CursorPos X="11" Y="162"/>
-        <UsageCount Value="37"/>
-=======
         <IsVisibleTab Value="True"/>
         <EditorIndex Value="1"/>
         <WindowIndex Value="0"/>
@@ -67,7 +49,6 @@
         <CursorPos X="34" Y="134"/>
         <UsageCount Value="38"/>
         <Loaded Value="True"/>
->>>>>>> 7df36ce... Pataisiau Daliaus medį. Neleak'ina
       </Unit4>
       <Unit5>
         <Filename Value="../medis2/sumenu.pas"/>
@@ -75,164 +56,14 @@
         <WindowIndex Value="0"/>
         <TopLine Value="70"/>
         <CursorPos X="1" Y="1"/>
-        <UsageCount Value="9"/>
+        <UsageCount Value="10"/>
       </Unit5>
-      <Unit6>
-        <Filename Value="ProcNFunc.pas"/>
-        <UnitName Value="ProcNFunc"/>
-        <EditorIndex Value="2"/>
-        <WindowIndex Value="0"/>
-        <TopLine Value="52"/>
-        <CursorPos X="11" Y="45"/>
-        <UsageCount Value="11"/>
-        <Loaded Value="True"/>
-      </Unit6>
-      <Unit7>
-        <Filename Value="Tipai.pas"/>
-        <UnitName Value="Tipai"/>
-        <EditorIndex Value="1"/>
-        <WindowIndex Value="0"/>
-        <TopLine Value="1"/>
-        <CursorPos X="1" Y="1"/>
-        <UsageCount Value="11"/>
-        <Loaded Value="True"/>
-      </Unit7>
-      <Unit8>
-        <Filename Value="../aurelijaus_medis/Meniu.pas"/>
-        <UnitName Value="DPMedis"/>
-        <EditorIndex Value="3"/>
-        <WindowIndex Value="0"/>
-        <TopLine Value="54"/>
-        <CursorPos X="1" Y="1"/>
-        <UsageCount Value="11"/>
-        <Loaded Value="True"/>
-      </Unit8>
     </Units>
     <General>
       <ActiveWindowIndexAtStart Value="0"/>
     </General>
     <JumpHistory Count="30" HistoryIndex="29">
       <Position1>
-<<<<<<< HEAD
-        <Filename Value="vektorius.pas"/>
-        <Caret Line="31" Column="36" TopLine="15"/>
-      </Position1>
-      <Position2>
-        <Filename Value="vektorius.pas"/>
-        <Caret Line="127" Column="5" TopLine="127"/>
-      </Position2>
-      <Position3>
-        <Filename Value="vektorius.pas"/>
-        <Caret Line="61" Column="46" TopLine="60"/>
-      </Position3>
-      <Position4>
-        <Filename Value="ads3.lpr"/>
-        <Caret Line="224" Column="20" TopLine="208"/>
-      </Position4>
-      <Position5>
-        <Filename Value="vektorius.pas"/>
-        <Caret Line="144" Column="20" TopLine="130"/>
-      </Position5>
-      <Position6>
-        <Filename Value="ads3.lpr"/>
-        <Caret Line="159" Column="34" TopLine="1"/>
-      </Position6>
-      <Position7>
-        <Filename Value="ads3.lpr"/>
-        <Caret Line="125" Column="13" TopLine="121"/>
-      </Position7>
-      <Position8>
-        <Filename Value="ads3.lpr"/>
-        <Caret Line="6" Column="3" TopLine="1"/>
-      </Position8>
-      <Position9>
-        <Filename Value="ads3.lpr"/>
-        <Caret Line="10" Column="12" TopLine="1"/>
-      </Position9>
-      <Position10>
-        <Filename Value="ads3.lpr"/>
-        <Caret Line="8" Column="16" TopLine="1"/>
-      </Position10>
-      <Position11>
-        <Filename Value="ads3.lpr"/>
-        <Caret Line="9" Column="4" TopLine="1"/>
-      </Position11>
-      <Position12>
-        <Filename Value="ProcNFunc.pas"/>
-        <Caret Line="1" Column="1" TopLine="13"/>
-      </Position12>
-      <Position13>
-        <Filename Value="ads3.lpr"/>
-        <Caret Line="38" Column="12" TopLine="12"/>
-      </Position13>
-      <Position14>
-        <Filename Value="ads3.lpr"/>
-        <Caret Line="132" Column="34" TopLine="114"/>
-      </Position14>
-      <Position15>
-        <Filename Value="ProcNFunc.pas"/>
-        <Caret Line="1" Column="1" TopLine="1"/>
-      </Position15>
-      <Position16>
-        <Filename Value="ads3.lpr"/>
-        <Caret Line="135" Column="27" TopLine="134"/>
-      </Position16>
-      <Position17>
-        <Filename Value="ads3.lpr"/>
-        <Caret Line="151" Column="23" TopLine="141"/>
-      </Position17>
-      <Position18>
-        <Filename Value="ads3.lpr"/>
-        <Caret Line="161" Column="28" TopLine="152"/>
-      </Position18>
-      <Position19>
-        <Filename Value="ProcNFunc.pas"/>
-        <Caret Line="77" Column="11" TopLine="7"/>
-      </Position19>
-      <Position20>
-        <Filename Value="ProcNFunc.pas"/>
-        <Caret Line="45" Column="11" TopLine="34"/>
-      </Position20>
-      <Position21>
-        <Filename Value="ProcNFunc.pas"/>
-        <Caret Line="40" Column="11" TopLine="29"/>
-      </Position21>
-      <Position22>
-        <Filename Value="ads3.lpr"/>
-        <Caret Line="179" Column="1" TopLine="94"/>
-      </Position22>
-      <Position23>
-        <Filename Value="ads3.lpr"/>
-        <Caret Line="95" Column="39" TopLine="84"/>
-      </Position23>
-      <Position24>
-        <Filename Value="ads3.lpr"/>
-        <Caret Line="100" Column="17" TopLine="89"/>
-      </Position24>
-      <Position25>
-        <Filename Value="ProcNFunc.pas"/>
-        <Caret Line="120" Column="10" TopLine="109"/>
-      </Position25>
-      <Position26>
-        <Filename Value="ProcNFunc.pas"/>
-        <Caret Line="113" Column="10" TopLine="102"/>
-      </Position26>
-      <Position27>
-        <Filename Value="ads3.lpr"/>
-        <Caret Line="100" Column="16" TopLine="89"/>
-      </Position27>
-      <Position28>
-        <Filename Value="ads3.lpr"/>
-        <Caret Line="104" Column="17" TopLine="100"/>
-      </Position28>
-      <Position29>
-        <Filename Value="ads3.lpr"/>
-        <Caret Line="128" Column="28" TopLine="107"/>
-      </Position29>
-      <Position30>
-        <Filename Value="ads3.lpr"/>
-        <Caret Line="200" Column="33" TopLine="207"/>
-=======
         <Filename Value="ads3.lpr"/>
         <Caret Line="146" Column="18" TopLine="135"/>
       </Position1>
@@ -351,7 +182,6 @@
       <Position30>
         <Filename Value="unitas.pas"/>
         <Caret Line="135" Column="33" TopLine="122"/>
->>>>>>> 7df36ce... Pataisiau Daliaus medį. Neleak'ina
       </Position30>
     </JumpHistory>
   </ProjectSession>

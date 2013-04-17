@@ -264,36 +264,30 @@ const
   end;
 
   //buvo pagrindiniame begin end.
-  procedure Pagrindine(var max_darb_n, max_darb_r, max_darb_m: longint);
-  var
-    skait_at_tik, ar_yra_knyga: shortint;
-    v: vect;
+  procedure Pagrindine(skait_at_tik, ar_yra_knyga: shortint; v: vect;
+  var max_darb_n, max_darb_r, max_darb_m: longint);
 
   begin
-    Randomize;
-    if ParamSkaitymas('param.txt', skait_at_tik, ar_yra_knyga, v) = 0 then
-    begin
-      BeDublikatu(v);
-      DarboDiena(skait_at_tik, ar_yra_knyga, v, max_darb_n, max_darb_r, max_darb_m);
-      WriteLn(max_darb_n);
-      WriteLn(max_darb_r);
-      WriteLn(max_darb_m);
-      VNaik(v);
+    DarboDiena(skait_at_tik, ar_yra_knyga, v, max_darb_n, max_darb_r, max_darb_m);
+    WriteLn(max_darb_n);
+    WriteLn(max_darb_r);
+    WriteLn(max_darb_m);
     {while v.VDydis > 0 do
     begin
       VRasyk(v);
       WriteLn;
       VMazinkVienetu(v);
     VRasyk(v); WriteLn;}
-    end;
   end;
 
 var
   darb_n, darb_r, darb_m, max_darb_n, max_darb_r, max_darb_m,
   suma_darb_n, suma_darb_r, suma_darb_m: longint;
+  skait_at_tik, ar_yra_knyga: shortint;
+  v: vect;
   i: longint;
 begin
-  //Randomize;
+  Randomize;
   suma_darb_n := 0;
   suma_darb_r := 0;
   suma_darb_m := 0;
@@ -301,19 +295,25 @@ begin
   max_darb_r := 0;
   max_darb_m := 0;
 
-  for i := 1 to 10000 do
+  if ParamSkaitymas('param.txt', skait_at_tik, ar_yra_knyga, v) = 0 then
   begin
-    WriteLn('Ciklas ', i);
-    Pagrindine(darb_n, darb_r, darb_m);
-    suma_darb_n := suma_darb_n + darb_n;
-    suma_darb_r := suma_darb_r + darb_r;
-    suma_darb_m := suma_darb_m + darb_m;
-    if darb_n > max_darb_n then
-      max_darb_n := darb_n;
-    if darb_r > max_darb_r then
-      max_darb_r := darb_r;
-    if darb_m > max_darb_m then
-      max_darb_m := darb_m;
+    BeDublikatu(v);
+    for i := 1 to 10000 do
+    begin
+      WriteLn('Ciklas ', i);
+      Pagrindine(skait_at_tik, ar_yra_knyga,
+        v, darb_n, darb_r, darb_m);
+      suma_darb_n := suma_darb_n + darb_n;
+      suma_darb_r := suma_darb_r + darb_r;
+      suma_darb_m := suma_darb_m + darb_m;
+      if darb_n > max_darb_n then
+        max_darb_n := darb_n;
+      if darb_r > max_darb_r then
+        max_darb_r := darb_r;
+      if darb_m > max_darb_m then
+        max_darb_m := darb_m;
+    end;
+    VNaik(v);
   end;
   WriteLn('Maksimumai ir vidurkiai:');
   WriteLn('Nesurusiuoto ', max_darb_n, ' ', (suma_darb_n / 10000): 2: 3);

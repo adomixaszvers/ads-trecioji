@@ -2,3 +2,6 @@ ads3
 *.bak
 lib
 param.txt
+*.ppu
+*.o
+ads3.lpr.orig

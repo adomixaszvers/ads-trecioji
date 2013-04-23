@@ -10,7 +10,7 @@ uses
   unitas; //Daliaus
 
 const
-  DarboLaikas = 1440; //Kiek laiko vienetu truks diena
+  DarboLaikas = 480; //Kiek laiko vienetu truks diena
 
 {type
   dtP = ^duomenu_tipas;}
@@ -161,7 +161,7 @@ const
   //funkcija, kuri grazina, ar palankus ivykis pagal tikimybe
   function Ivykis(tikimybe: shortint): boolean;
   begin
-    Ivykis := Random(101) >= tikimybe;
+    Ivykis := Random(101) <= tikimybe;
   end;
 
   //procedura, kuri is vektoriaus pasalina dublikatus
@@ -206,12 +206,12 @@ const
   begin
     max_darb_n := 0;
     max_darb_r := 0;
-    max_darb_r := 0;
+    max_darb_m := 0;
     VKopijuok(v, knygos_n);
     VKopijuok(v, knygos_r);
     SurusiuotiVek(knygos_r);
     MKopijuok(v, knygos_m);
-    //Balansavimas(knygos_m, klaida);
+    Balansavimas(knygos_m, klaida);
     VKurk(darb_n);
     VKurk(darb_r);
     VKurk(darb_m);
@@ -269,9 +269,9 @@ const
 
   begin
     DarboDiena(skait_at_tik, ar_yra_knyga, v, max_darb_n, max_darb_r, max_darb_m);
-    WriteLn(max_darb_n);
+    {WriteLn(max_darb_n);
     WriteLn(max_darb_r);
-    WriteLn(max_darb_m);
+    WriteLn(max_darb_m);}
     {while v.VDydis > 0 do
     begin
       VRasyk(v);
@@ -279,6 +279,8 @@ const
       VMazinkVienetu(v);
     VRasyk(v); WriteLn;}
   end;
+
+const ciklu=5000;
 
 var
   darb_n, darb_r, darb_m, max_darb_n, max_darb_r, max_darb_m,
@@ -298,9 +300,9 @@ begin
   if ParamSkaitymas('param.txt', skait_at_tik, ar_yra_knyga, v) = 0 then
   begin
     BeDublikatu(v);
-    for i := 1 to 10000 do
+    for i := 1 to ciklu do
     begin
-      WriteLn('Ciklas ', i);
+      //WriteLn('Ciklas ', i);
       Pagrindine(skait_at_tik, ar_yra_knyga,
         v, darb_n, darb_r, darb_m);
       suma_darb_n := suma_darb_n + darb_n;
@@ -316,8 +318,8 @@ begin
     VNaik(v);
   end;
   WriteLn('Maksimumai ir vidurkiai:');
-  WriteLn('Nesurusiuoto ', max_darb_n, ' ', (suma_darb_n / 10000): 2: 3);
-  WriteLn('Surusiuota ', max_darb_r, ' ', (suma_darb_r / 10000): 2: 3);
-  WriteLn('Medzio ', max_darb_m, ' ', (suma_darb_m / 10000): 2: 3);
+  WriteLn('Nesurusiuoto ', max_darb_n, ' ', (suma_darb_n / ciklu): 2: 3);
+  WriteLn('Surusiuota ', max_darb_r, ' ', (suma_darb_r / ciklu): 2: 3);
+  WriteLn('Medzio ', max_darb_m, ' ', (suma_darb_m / ciklu): 2: 3);
 
 end.
